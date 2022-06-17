@@ -1,0 +1,56 @@
+ja:
+  layouts:
+    footer:
+      en: "英語"
+      vi: "ベトナム語"
+      ja: "日本"
+    header:
+      account: マイアカウント
+      wallets: 私の財布
+      categories: カテゴリ
+      transactions: トランザクション
+      report: 報告
+      abount: 私について
+      help: ヘルプ
+  static_pages:
+    home:
+      title: "ホームページ"
+    about:
+      title: "私について"
+      welcome: "私について"
+      first_intro: "Web開発を教えるための本とスクリーンキャストです"
+      second_intro: "これはチュートリアルのサンプルアプリケーションです"
+    help:
+      title: "ヘルプ"
+      welcome: "ヘルプ"
+      first_intro: "Ruby on Railsチュートリアルのヘルプを入手してください"
+      second_intro: "このサンプルアプリのヘルプを取得するには、を参照してください。"
+  users:
+    new:
+      title: "サインアップ"
+      welcome: "サインアップ"
+      submit: "アカウントを作る"
+      question: "ユーザー？"
+      login: "ログイン"
+  shared:
+    error_messages:
+      prefix: "フォームには %{err_count} が含まれています"
+      error: "エラー"
+
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+        email: "メール"
+        password: "パスワード"
+        password_confirmation: "パスワードの確認"
+  sessions:
+    new:
+      sign_up: "サインアップ"
+      title: "ログイン"
+      welcome: "ログイン"
+      submit: "ログイン"
+      email_label: "メール"
+      new_question: "新しいユーザー？"
+      password_label: "パスワード"
+      remember_me: "このコンピューターで私を覚えておいてください"

@@ -1,0 +1,55 @@
+vi:
+  layouts:
+    footer:
+      en: "Tiếng Anh"
+      vi: "Tiếng Việt"
+      ja: "Tiếng Nhật"
+    header:
+      account: Tài khoản của tôi
+      wallets: Ví của tôi
+      categories: Categories
+      transactions: Giao dịch
+      report: Báo cáo
+      abount: Thông tin
+      help: Hỗ trợ
+  static_pages:
+    home:
+      title: "Trang chủ"
+    about:
+      title: "Thông tin"
+      welcome: "Thông tin"
+      first_intro: "là một cuốn sách dạy phát triển ứng dụng với"
+      second_intro: "Đây là ứng dụng quản lý tài chính của hướng dẫn này"
+    help:
+      title: "Trợ giúp"
+      welcome: "Trợ giúp"
+      first_intro: "Nhận sự hỗ trợ của ứng dụng quản lý tài chính"
+      second_intro: "Nhận hỗ trợ về ứng dụng quản lý tài chính, xem tại"
+  users:
+    new:
+      title: "Đăng ký"
+      welcome: "Đăng ký"
+      submit: "Tạo tài khoản"
+      question: "Đã có tài khoản？"
+      login: "Đăng nhập"
+  shared:
+    error_messages:
+      prefix: "Bạn có %{err_count} "
+      error: "Lỗi"
+  activerecord:
+    attributes:
+      user:
+        name: "Tên"
+        email: "Địa chỉ Email"
+        password: "Mật khẩu"
+        password_confirmation: "Mật khẩu xác nhận"
+  sessions:
+    new:
+      sign_up: "Đăng ký"
+      title: "Đăng nhập"
+      welcome: "Đăng nhập"
+      submit: "Đăng nhập"
+      email_label: "Email"
+      new_question: "Người dùng mới?"
+      password_label: "Mật khẩu"
+      remember_me: "Hãy ghi nhớ tôi với"
