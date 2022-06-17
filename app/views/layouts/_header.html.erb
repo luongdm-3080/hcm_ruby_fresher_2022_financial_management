@@ -1,17 +1,53 @@
-<header class="sidebar">
-<div id="main">
-  <span class="openbtn">&#9776; <%= t (".menu") %></span>
-</div>
-  <div id="mySidenav" class="sidenav">
-    <span class="closebtn">&times;</span>
-    <li><%= link_to t(".account"), home_url %></li>
-    <li><%= link_to t(".wallets"), home_url %></li>
-    <li><%= link_to t(".categories"), home_url %></li>
+<% if logged_in? %>
+  <div class="wrapper">
+    <div class="top_navbar">
+      <div class="hamburger">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
+      <div class="top_menu">
+        <%= link_to t(".base_title"), home_url, class: "logo" %>
+        <ul>
+          <li>
+            <button type="button" class="btn btn-default btn-sm">
+              <span class="glyphicon glyphicon-log-out" ></span>
+              <%= link_to t(".log_out"), logout_path, method: :delete %>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <ul>
+        <li>
+          <span class="icon"><i class="fas fa-book"></i></span>
+          <%= link_to t(".transactions"), home_url, class: "title" %>
+        </li>
+        <li>
+          <span class="icon"><i class="fas fa-file-video"></i></span>
+          <%= link_to t(".report"), "#", class: "title" %>
+        </li>
+        <li>
+          <span class="icon"><i class="fas fa-volleyball-ball"></i></span>
+          <%= link_to t(".wallets"), "#", class: "title" %>
+        </li>
+        <li class="active">
+          <span class="icon"><i class="fas fa-blog"></i></span>
+          <%= link_to t(".categories"), "#", class: "title" %>
+        </li>
+        <li>
+          <span class="icon"><i class="fas fa-leaf"></i></span>
+          <%= link_to t(".about"), about_url, class: "title" %>
+        </li>
+        <li>
+          <span class="icon"><i class="fas fa-leaf"></i></span>
+          <%= link_to t(".help"), help_url, class: "title" %>
+        </li>
+      </ul>
+    </div>
   </div>
-    <li ><%= link_to t(".transactions"), home_url %></li>
-    <li><%= link_to t(".report"), home_url %></li>
-    <li><%= link_to t(".abount"),about_url %></li>
-    <li><%= link_to t(".help"), help_url %></li>
-</header>
+<% end %>
 
 <%= javascript_pack_tag "sidebar_header" %>

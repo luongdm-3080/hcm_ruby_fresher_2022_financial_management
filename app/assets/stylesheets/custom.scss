@@ -77,93 +77,127 @@ h1 {
   margin-bottom: 30px;
   text-align: center;
 }
-
-.sidebar {
+* {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: $green-light;
-  overflow-x: hidden;
-  padding-top: 16px;
-}
-
-.sidebar a {
-  padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 20px;
-  color: $white;
-  display: block;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
-
-.sidebar a:hover {
-  color: $gray-medium-light;
+body {
+  background: $blue-body;
 }
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
+.wrapper {
+  margin: 10px;
+  .top_navbar {
+    width: calc(100% - 20px);
+    height: 60px;
+    display: flex;
+    position: fixed;
+    top: 10px;
+    .hamburger {
+      width: 70px;
+      height: 100%;
+      background: $blue-light;
+      padding: 15px 17px;
+      border-top-left-radius: 20px;
+      cursor: pointer;
+      div {
+        width: 35px;
+        height: 4px;
+        background: $light-darker;
+        margin: 5px 0;
+        border-radius: 5px;
+      }
+    }
+    .top_menu {
+      width: calc(100% - 70px);
+      height: 100%;
+      background: $white;
+      border-top-right-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 1px 1px $darker;
+      .logo {
+        color: $blue-light;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 3px;
+      }
+      ul {
+        display: flex;
+      }
+    }
+  }
+  .btn-inverse {
+    display: block;
+    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid $blue-light;
+    border-radius: 50%;
+    color: $blue-light;
+    &:hover {
+      background: $blue-medium;
+      color: $white;
+      i {
+        color: $white;
+      }
+    }
+  }
+  .sidebar {
+    position: fixed;
+    top: 70px;
+    left: 10px;
+    background: $blue-light;
+    width: 200px;
+    height: calc(100% - 80px);
+    border-bottom-left-radius: 20px;
+    transition: all 0.3s ease;
+    ul {
+      li {
+        .title {
+          display: block;
+          padding: 20px;
+          color: $white;
+          position: relative;
+          color: $light-darker;
+          margin-bottom: 1px;
+          white-space: nowrap;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: $light-darker;
+            display: none;
+          }
+        }
+        span.icon {
+          margin-right: 10px;
+          display: inline-block;
+        }
+        .title {
+          display: inline-block;
+        }
+        &:hover {
+          background: $blue-medium;
+          color: $white;
+          &:before {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }
-
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  padding: 0px 10px;
-}
-.openbtn{
-  margin-left: 20px;
-  font-size:30px;
-  cursor:pointer;
-}
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
-}
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: $gray-darker;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: $gray-light;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: $white;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-.show{
-  width: 250px;
-  transition: 0.6s cubic-bezier(0, 1.16, 0, 1.23);
-}
-.closebtn{
-  cursor: pointer;
+.container{
+  margin-top: 60px;
 }

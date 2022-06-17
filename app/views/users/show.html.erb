@@ -1,0 +1,8 @@
+<% provide :title, @user.name %>
+<div class="span3 well">
+  <center>
+    <%= gravatar_for @user, size: Settings.gravatar.size_view %>
+    <h3><%= @user.name %></h3>
+  </center>
+  <%= link_to t(".log_out"), logout_path, method: :delete %>
+</div>

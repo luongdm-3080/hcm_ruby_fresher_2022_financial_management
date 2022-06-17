@@ -1,4 +1,5 @@
 en:
+  base_title: Personal Financial Management
   layouts:
     footer:
       en: "English"
@@ -10,7 +11,7 @@ en:
       categories: Categories
       transactions: Transactions
       report: Report
-      abount: About
+      about: About
       help: Help
       menu: Menu
   static_pages:
@@ -26,12 +27,18 @@ en:
       first_intro: "Get help on the Personal Financial Management at the"
       second_intro: "To get help on this Personal Financial Management  app, see the"
   users:
+    not_logged: "Please log in."
+    not_found: "User not found"
+    unauthorization: "You don't have permission to do this action"
     new:
       title: "Sign up"
       welcome: "Sign up"
       submit: "Create my account"
       question: "User?"
       Login: "Log in"
+    create:
+      success_message: "Welcome to the Personal Financial Management!"
+      failure_message: "Sign up failed!"
   shared:
     error_messages:
       prefix: "The form contains %{err_count} "
@@ -47,3 +54,8 @@ en:
       question: "User?"
       password_label: "Password"
       remember_me: "Remember me on this computer"
+    create:
+      success_message: "Welcome to the App!"
+      failure_message: "Sign up failed!"
+  success_message: "Welcome to the App!"
+  failure_message: "Sign up failed!"

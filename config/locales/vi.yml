@@ -10,8 +10,9 @@ vi:
       categories: Categories
       transactions: Giao dịch
       report: Báo cáo
-      abount: Thông tin
+      about: Thông tin
       help: Hỗ trợ
+      menu: Menu
   static_pages:
     home:
       title: "Trang chủ"
@@ -26,6 +27,9 @@ vi:
       first_intro: "Nhận sự hỗ trợ của ứng dụng quản lý tài chính"
       second_intro: "Nhận hỗ trợ về ứng dụng quản lý tài chính, xem tại"
   users:
+    not_found: "Không tìm thấy người dùng"
+    not_logged: "Vui lòng hãy đăng nhập."
+    unauthorization: "Bạn không có quyền thực hiện hành động này"
     new:
       title: "Đăng ký"
       welcome: "Đăng ký"
@@ -53,3 +57,8 @@ vi:
       new_question: "Người dùng mới?"
       password_label: "Mật khẩu"
       remember_me: "Hãy ghi nhớ tôi với"
+    create:
+      success_message: "Chào mừng đến với  website quản lý tài chính!"
+      failure_message: "Đăng ký nguời dùng thất bại"
+  success_message: "Chào mừng đến với website quản lý tài chính!"
+  failure_message: "Đăng ký nguời dùng thất bại"
