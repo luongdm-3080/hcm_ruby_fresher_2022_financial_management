@@ -1,0 +1,16 @@
+<div class="item">
+  <i class="bi bi-wallet"></i>
+  <span class = "wallet_name"><%= t "wallet_name", name: wallet.name %></span>
+
+  <i class="bi bi-piggy-bank"></i>
+  <span class = "wallet_balance"><%= t "wallet_balance", balance: wallet.balance %></span>
+
+  <i class="bi bi-alarm-fill"></i>
+  <span class="timestamp">
+    <%= t "create_time", time: time_ago_in_words(wallet.created_at) %>
+  </span>
+  <span class = "btn_wallet">
+    <%= link_to t("transactions"), wallet_url(wallet) %>
+    <i class="fa fa-eye" aria-hidden="true"></i>
+  </span>
+</div>

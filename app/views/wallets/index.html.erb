@@ -1,0 +1,8 @@
+<% provide :title, t(".title") %>
+<div class="main_container">
+  <% if @wallets.any? %>
+    <%= render @wallets %>
+  <% else %>
+    <h3><%= t ".no_wallet" %></h3>
+  <% end %>
+</div>

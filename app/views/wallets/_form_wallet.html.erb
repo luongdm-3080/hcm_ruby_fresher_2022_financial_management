@@ -1,0 +1,10 @@
+<%= form_for @wallet do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name, t("name_label") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :balance, t("balance_label") %>
+  <%= f.text_field :balance, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

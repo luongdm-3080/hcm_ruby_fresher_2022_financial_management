@@ -5,6 +5,8 @@ ja:
       vi: "ベトナム語"
       ja: "日本"
     header:
+      base_title: 個人財務管理
+      add_wallet: ウォレットを追加
       account: マイアカウント
       wallets: 私の財布
       categories: カテゴリ
@@ -13,6 +15,7 @@ ja:
       about: 私について
       help: ヘルプ
       menu: メニュー
+      log_out: ログアウト
   static_pages:
     home:
       title: "ホームページ"
@@ -63,3 +66,30 @@ ja:
         failure_message: "サインアップに失敗しました！"
   success_message: "個人財務管理へようこそ!"
   failure_message: "サインアップに失敗しました！"
+  name_label: "ネームウォレット"
+  balance_label: "バランス"
+  wallets:
+    not_found: "財布が見つかりません"
+    unauthorization: "このアクションを実行する権限がありません"
+    new:
+      welcome: "財布を作ろう"
+      title: "ウォレットを作成する"
+      submit: "ウォレットを作成する"
+    create:
+      success: "ウォレットの成功を生み出す"
+      failure: "ウォレットの作成に失敗"
+    index:
+      title: "私の財布"
+      transactions: 取引
+      no_wallet: "ウォレットなし"
+    show:
+      title: "私の財布"
+      current: "経常収支"
+      my_wallet: "私の財布"
+      wallet_name: "ウォレット名：%{name}"
+      wallet_balance: "バランク: $%{balance}"
+      create_time: "%{time} 前に作成"
+      no_transaction : "取引なし"
+  create_time: "%{time} 前に作成"
+  wallet_name: "ウォレット名：%{name} ||"
+  wallet_balance: "バランク: $%{balance} ||"

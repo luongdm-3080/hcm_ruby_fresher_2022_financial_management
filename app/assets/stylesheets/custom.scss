@@ -132,24 +132,6 @@ body {
       }
     }
   }
-  .btn-inverse {
-    display: block;
-    margin: 0 10px;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    border: 1px solid $blue-light;
-    border-radius: 50%;
-    color: $blue-light;
-    &:hover {
-      background: $blue-medium;
-      color: $white;
-      i {
-        color: $white;
-      }
-    }
-  }
   .sidebar {
     position: fixed;
     top: 70px;
@@ -161,12 +143,12 @@ body {
     transition: all 0.3s ease;
     ul {
       li {
+        border-bottom: 1px solid $light-darker;
         .title {
           display: block;
           padding: 20px;
           color: $white;
           position: relative;
-          color: $light-darker;
           margin-bottom: 1px;
           white-space: nowrap;
           &:before {
@@ -181,11 +163,13 @@ body {
           }
         }
         span.icon {
-          margin-right: 10px;
+          margin-left: 5px;
           display: inline-block;
         }
         .title {
           display: inline-block;
+          text-decoration: none;
+          font-size: 20px;
         }
         &:hover {
           background: $blue-medium;
@@ -198,6 +182,160 @@ body {
     }
   }
 }
+.wrapper.collapse .sidebar ul li a span.icon {
+  margin: 0;
+}
 .container{
+  width: calc(100% - 200px);
+  margin-top: 70px;
+  margin-left: 200px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+.main_container {
+  width: calc(100% - 70px);
+  margin-left: 70px;
+}
+.main_container .item {
+  background: $white;
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.btn-primary::before {
+  font-family: fontAwesome;
+  content: '\f067\00a0';
+}
+
+button.btn.edit::before {
+  font-family: fontAwesome;
+  content: '\f044\00a0';
+}
+
+button.btn.save::before {
+  font-family: fontAwesome;
+  content: '\f00c\00a0';
+}
+
+button.btn.cancel::before {
+  font-family: fontAwesome;
+  content: '\f00d\00a0';
+}
+.btn_wallet {
+  float: right;
+}
+.wallet{
+  margin-top: 5em;
+  padding-top: 0;
+}
+.content {
+  display: block;
+  margin-left: 60px;
+  img {
+      display: block;
+      padding: 5px 0;
+  }
+}
+.wallet_name {
+  font-size: 18px;
+  font-style: italic;
+  margin-right: 10px;
+  font-weight: bolder;
+}
+.wallet_balance{
+  font-weight: bold;
+  margin-right: 10px;
+}
+.timestamp {
+  font-style: italic;
+  color: $blue-light;
+}
+.wrapper_li {
+  font-family: 'Open Sans', sans-serif;
+  padding: 50px 10px;
+}
+.app-wrapper {
+  background-color: $white;
+  height: 700px;
+  max-width: 880px;
+  margin: 0 auto;
+  border-radius: 8px;
+  display: flex;
+  -webkit-box-shadow: 0px 8px 24px 4px $orange-light;
+  -moz-box-shadow: 0px 8px 24px 4px $orange-light;
+  box-shadow: 0px 8px 24px 4px $orange-light;
+}
+.wallet {
+  width: 360px;
+  background-color: $gray-lighter;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+  padding: 50px;
+}
+.wallet h2 {
+  display:inline-block;
+}
+.transactions-wrapper {
+  width: 520px;
+  padding: 50px;
+}
+.total-balance {
+  display: inline-block;
+  float: right;
+  font-weight: 600;
+  font-size: 32px;
+  color: #444750;
+}
+.total-balance::before {
+  content: '$';
+}
+.transactions {
   margin-top: 60px;
+  border-top: 1px solid $light-555;
+  padding-top: 50px;
+  height: 550px;
+  overflow: scroll;
+}
+.transactions::-webkit-scrollbar {
+  display: none;
+}
+
+/* media queries */
+@media(max-width:810px) {
+  .wrapper_li {
+    border-radius: 8px;
+  }
+  .wallet {
+    width: 100%;
+    border-top-right-radius: inherit;
+    padding-bottom: 25px;
+  }
+  .app-wrapper {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    border-top-right-radius: inherit;
+    height: initial;
+  }
+  .transactions {
+    height: initial;
+  }
+}
+@media(max-width:530px) {
+  h3 {
+    line-height: 24px;
+  }
+  .total-balance {
+    font-size: 22px;
+  }
+}
+@media(max-width: 390px) {
+  .wallet {
+    padding: 50px 25px;
+  }
+  h2 {
+    font: 18px/24px 'Open Sans', sans-serif;
+  }
 }

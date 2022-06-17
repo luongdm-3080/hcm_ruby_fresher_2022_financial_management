@@ -5,6 +5,8 @@ vi:
       vi: "Tiếng Việt"
       ja: "Tiếng Nhật"
     header:
+      base_title: Quản lý tài chính
+      add_wallet: Thêm ví
       account: Tài khoản của tôi
       wallets: Ví của tôi
       categories: Categories
@@ -13,6 +15,7 @@ vi:
       about: Thông tin
       help: Hỗ trợ
       menu: Menu
+      log_out: Đăng xuất
   static_pages:
     home:
       title: "Trang chủ"
@@ -62,3 +65,30 @@ vi:
       failure_message: "Đăng ký nguời dùng thất bại"
   success_message: "Chào mừng đến với website quản lý tài chính!"
   failure_message: "Đăng ký nguời dùng thất bại"
+  name_label: "Tên ví"
+  balance_label: "Số tiền"
+  wallets:
+    not_found: "Không tìm thấy ví nào"
+    unauthorization: "Bạn không có quyền truy cập"
+    new:
+      welcome: "Hãy tạo ví nào"
+      title: "Tạo ví"
+      submit: "Tạo ví"
+    create:
+      success: "Tạo ví thành công"
+      failure: "Tạo ví thất bại"
+    index:
+      title: "Ví của tôi"
+      transactions: Xem giao dịch
+      no_wallet: "Không có ví nào hiện tại"
+    show:
+      title: "Ví của tôi"
+      current: "Số dư hiện tại"
+      my_wallet: "Ví của tôi"
+      wallet_name: "Tên ví là: %{name}"
+      wallet_balance: "Số tiền là: $%{balance}"
+      create_time: "Tạo %{time} trước"
+      no_transaction : "Hiện tại không có giao dịch nào"
+  create_time: "Tạo %{time} trước"
+  wallet_name: "Tên ví là: %{name} ||"
+  wallet_balance: "Số tiền là: $%{balance} ||"
