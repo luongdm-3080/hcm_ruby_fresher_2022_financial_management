@@ -1,0 +1,17 @@
+<header class="sidebar">
+<div id="main">
+  <span class="openbtn">&#9776; <%= t (".menu") %></span>
+</div>
+  <div id="mySidenav" class="sidenav">
+    <span class="closebtn">&times;</span>
+    <li><%= link_to t(".account"), home_url %></li>
+    <li><%= link_to t(".wallets"), home_url %></li>
+    <li><%= link_to t(".categories"), home_url %></li>
+  </div>
+    <li ><%= link_to t(".transactions"), home_url %></li>
+    <li><%= link_to t(".report"), home_url %></li>
+    <li><%= link_to t(".abount"),about_url %></li>
+    <li><%= link_to t(".help"), help_url %></li>
+</header>
+
+<%= javascript_pack_tag "sidebar_header" %>
