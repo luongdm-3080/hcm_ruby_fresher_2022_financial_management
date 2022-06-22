@@ -10,8 +10,9 @@ ja:
       categories: カテゴリ
       transactions: トランザクション
       report: 報告
-      abount: 私について
+      about: 私について
       help: ヘルプ
+      menu: メニュー
   static_pages:
     home:
       title: "ホームページ"
@@ -19,13 +20,16 @@ ja:
       title: "私について"
       welcome: "私について"
       first_intro: "Web開発を教えるための本とスクリーンキャストです"
-      second_intro: "これはチュートリアルのサンプルアプリケーションです"
+      second_intro: "これはチュートリアルの個人財務管理ケーションです"
     help:
       title: "ヘルプ"
       welcome: "ヘルプ"
       first_intro: "Ruby on Railsチュートリアルのヘルプを入手してください"
-      second_intro: "このサンプルアプリのヘルプを取得するには、を参照してください。"
+      second_intro: "この個人財務管理のヘルプを取得するには、を参照してください。"
   users:
+    not_found: "ユーザーが見つかりません"
+    not_logged: "ログインしてください."
+    unauthorization: "このアクションを実行する権限がありません"
     new:
       title: "サインアップ"
       welcome: "サインアップ"
@@ -54,3 +58,8 @@ ja:
       new_question: "新しいユーザー？"
       password_label: "パスワード"
       remember_me: "このコンピューターで私を覚えておいてください"
+    create:
+        success_message: "個人財務管理へようこそ!"
+        failure_message: "サインアップに失敗しました！"
+  success_message: "個人財務管理へようこそ!"
+  failure_message: "サインアップに失敗しました！"

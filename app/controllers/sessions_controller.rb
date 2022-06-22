@@ -1,7 +1,24 @@
 class SessionsController < ApplicationController
+  before_action :check_login, only: %i(new)
   def new; end
 
-  def create; end
+  def create
+    email, password, remember_me = params[:session].values_at(:email, :password,
+                                                              :remember_me)
+    user = User.find_by email: email.downcase
 
-  def destroy; end
+    if user&.authenticate password
+      log_in user
+      remember_me == "1" ? remember(user) : forget(user)
+      redirect_to home_url
+    else
+      flash.now[:danger] = t ".failure_message"
+      render :new
+    end
+  end
+
+  def destroy
+    log_out if logged_in?
+    redirect_to root_url
+  end
 end
