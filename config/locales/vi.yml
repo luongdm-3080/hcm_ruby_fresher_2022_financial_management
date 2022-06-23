@@ -43,6 +43,11 @@ vi:
     error_messages:
       prefix: "Bạn có %{err_count} "
       error: "Lỗi"
+    modal_delete:
+      close: Đóng
+    modal_edit:
+      submit: Cập nhật
+    delete: Xóa ví
   activerecord:
     attributes:
       user:
@@ -67,6 +72,9 @@ vi:
   failure_message: "Đăng ký nguời dùng thất bại"
   name_label: "Tên ví"
   balance_label: "Số tiền"
+  transactions: Xem ví
+  edit: Chỉnh sửa
+  delete: Xóa vi
   wallets:
     not_found: "Không tìm thấy ví nào"
     unauthorization: "Bạn không có quyền truy cập"
@@ -89,6 +97,14 @@ vi:
       wallet_balance: "Số tiền là: $%{balance}"
       create_time: "Tạo %{time} trước"
       no_transaction : "Hiện tại không có giao dịch nào"
+    update:
+      edit_failure_message: "Cập nhập thất bại"
+      edit_success_message: "Cập nhập thành công"
+    destroy:
+      deleted_message: "Xóa ví thành công"
   create_time: "Tạo %{time} trước"
   wallet_name: "Tên ví là: %{name} ||"
   wallet_balance: "Số tiền là: $%{balance} ||"
+  header: "Xóa ví của bạn"
+  message: "Bạn chắc là muốn xóa không????"
+  header_edit: "Chính sửa ví"

@@ -45,6 +45,10 @@ en:
     error_messages:
       prefix: "The form contains %{err_count} "
       error: "error"
+    modal_delete:
+      close: Close
+    modal_edit:
+      submit: Update
   sessions:
     new:
       sign_up: "Sign up"
@@ -85,6 +89,15 @@ en:
       wallet_balance: "Balance: $%{balance}"
       create_time: "Create %{time} ago"
       no_transaction : "No transactions"
+    update:
+      edit_failure_message: "Update failed"
+      edit_success_message: "Update success"
+    destroy:
+      deleted_message: "Wallet deleted"
+      delete_failed_message: "Wallet delete failed"
   create_time: "Create %{time} ago"
   wallet_name: "Wallet name: %{name} ||"
   wallet_balance: "Balance: $%{balance} ||"
+  header: "Delete Wallet"
+  message: "Can sure wallet?????"
+  header_edit: "Edit Wallet"

@@ -1,0 +1,10 @@
+<% if @wallet.errors.any? %>
+  <% @wallet.errors.full_messages.each do |msg| %>
+    toastr.error(`<%= msg %>`);
+  <% end %>
+  toastr.error("<%= flash[:danger] %>")
+<% else %>
+  $("#wallet" + <%= @wallet.id %>).replaceWith("<%= j(render @wallet) %>");
+  $(".modal-backdrop").remove();
+  toastr.success("<%= flash[:success] %>")
+<% end %>

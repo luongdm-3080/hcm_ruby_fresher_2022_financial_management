@@ -1,6 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'color';
+@import "toastr/toastr"; 
 
 footer {
   margin-top: 45px;
@@ -209,7 +210,7 @@ body {
   content: '\f067\00a0';
 }
 
-button.btn.edit::before {
+.btn-info::before {
   font-family: fontAwesome;
   content: '\f044\00a0';
 }
@@ -219,7 +220,7 @@ button.btn.save::before {
   content: '\f00c\00a0';
 }
 
-button.btn.cancel::before {
+.btn-link::before {
   font-family: fontAwesome;
   content: '\f00d\00a0';
 }

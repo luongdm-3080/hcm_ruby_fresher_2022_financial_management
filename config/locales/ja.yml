@@ -43,7 +43,11 @@ ja:
     error_messages:
       prefix: "フォームには %{err_count} が含まれています"
       error: "エラー"
-
+    modal_delete:
+      close: 閉まる
+    modal_edit:
+      submit: アップデート
+    delete: 削除する
   activerecord:
     attributes:
       user:
@@ -68,6 +72,9 @@ ja:
   failure_message: "サインアップに失敗しました！"
   name_label: "ネームウォレット"
   balance_label: "バランス"
+  transactions: 財布
+  edit: 整理
+  delete: 削除する
   wallets:
     not_found: "財布が見つかりません"
     unauthorization: "このアクションを実行する権限がありません"
@@ -90,6 +97,14 @@ ja:
       wallet_balance: "バランク: $%{balance}"
       create_time: "%{time} 前に作成"
       no_transaction : "取引なし"
+    update:
+      edit_failure_message: "アップデートに失敗しました"
+      edit_success_message: "更新の成功"
+    destroy:
+      deleted_message: "ウォレットが削除されました"
   create_time: "%{time} 前に作成"
   wallet_name: "ウォレット名：%{name} ||"
   wallet_balance: "バランク: $%{balance} ||"
+  header: "ウォレットを削除する"
+  message: "確かに財布ができます?????"
+  header_edit: "ウォレットの編集"
