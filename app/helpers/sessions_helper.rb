@@ -37,7 +37,7 @@ module SessionsHelper
     @current_user = nil
   end
 
-  def current_user? user
-    user && user == current_user
+  def current_user? user_id
+    user_id && user_id.to_i == current_user.try(:id)
   end
 end

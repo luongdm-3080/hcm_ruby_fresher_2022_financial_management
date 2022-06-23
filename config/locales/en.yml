@@ -1,11 +1,11 @@
 en:
-  base_title: Personal Financial Management
   layouts:
     footer:
       en: "English"
       vi: "Vietnamese"
       ja: "Japanese"
     header:
+      base_title: Personal Financial Management
       account: My Account
       wallets: My Wallets
       categories: Categories
@@ -14,6 +14,8 @@ en:
       about: About
       help: Help
       menu: Menu
+      add_wallet: Add Wallet
+      log_out: Logout
   static_pages:
     home:
       title: "Home"
@@ -55,7 +57,34 @@ en:
       password_label: "Password"
       remember_me: "Remember me on this computer"
     create:
-      success_message: "Welcome to the App!"
+      success_message: "Welcome to the Personal Financial Management!"
       failure_message: "Sign up failed!"
-  success_message: "Welcome to the App!"
+  success_message: "Welcome to the Personal Financial Management!"
   failure_message: "Sign up failed!"
+  name_label: "Name Wallet"
+  balance_label: "Balance"
+  wallets:
+    not_found: "Wallet not found"
+    unauthorization: "You don't have permission to do this action"
+    new:
+      welcome: "Let's create a wallet"
+      title: "Create Wallet"
+      submit: "Create wallet"
+    create:
+      success: "Create wallet success"
+      failure: "Create wallet fail"
+    index:
+      title: "My Wallets"
+      transactions: transaction
+      no_wallet: "No Wallet"
+    show:
+      title: "My Wallet"
+      current: "Current Balance"
+      my_wallet: "My Wallet"
+      wallet_name: "Wallet name: %{name}"
+      wallet_balance: "Balance: $%{balance}"
+      create_time: "Create %{time} ago"
+      no_transaction : "No transactions"
+  create_time: "Create %{time} ago"
+  wallet_name: "Wallet name: %{name} ||"
+  wallet_balance: "Balance: $%{balance} ||"

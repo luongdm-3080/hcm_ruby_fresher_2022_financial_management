@@ -1,0 +1,22 @@
+<% provide :title, t(".title") %>
+<div class="wrapper_li">
+  <div class="app-wrapper">
+    <aside class="wallet">
+      <h3><%= t ".my_wallet" %></h3>
+      <div class = "wallet_name"><%= t ".wallet_name", name: @wallet.name %></div>
+      <div class="timestamp">
+        <i class="bi bi-alarm-fill"></i>
+        <%= t ".create_time", time: time_ago_in_words(@wallet.created_at) %>
+      </div>
+    </aside>
+    <content class="transactions-wrapper">
+      <h2>
+        <%= t ".current" %>
+        <span class="total-balance"><%= @wallet.balance %></span>
+      </h2>
+      <div class="transactions">
+        <h3><%= t ".no_transaction" %></h3>
+      </div>
+    </content>
+  </div>
+</div>

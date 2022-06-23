@@ -8,6 +8,7 @@
       </div>
       <div class="top_menu">
         <%= link_to t(".base_title"), home_url, class: "logo" %>
+        <%= link_to t(".add_wallet"), new_wallet_url, class: "btn add btn-primary" %>
         <ul>
           <li>
             <button type="button" class="btn btn-default btn-sm">
@@ -31,7 +32,7 @@
         </li>
         <li>
           <span class="icon"><i class="fas fa-volleyball-ball"></i></span>
-          <%= link_to t(".wallets"), "#", class: "title" %>
+          <%= link_to t(".wallets"), wallets_url, class: "title" %>
         </li>
         <li class="active">
           <span class="icon"><i class="fas fa-blog"></i></span>

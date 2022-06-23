@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :load_user, :logged_in_user, except: %i(new create)
   before_action :check_login, only: %i(new)
   before_action :user_correct, only: %i(show)
+
   def new
     @user = User.new
   end
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   def user_correct
-    return if current_user? @user
+    return if current_user? @user.id
 
     flash[:danger] = t ".unauthorization"
     redirect_to current_user
