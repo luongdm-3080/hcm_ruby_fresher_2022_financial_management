@@ -1,0 +1,6 @@
+<% if flash[:success].present? %>
+  $("#wallet" + <%= @wallet.id %>).remove();
+  toastr.success("<%= flash[:success] %>")
+<% else %>
+  toastr.error("<%= flash[:danger] %>")
+<% end %>

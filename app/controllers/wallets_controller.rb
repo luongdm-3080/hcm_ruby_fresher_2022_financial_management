@@ -1,6 +1,11 @@
 class WalletsController < ApplicationController
   before_action :logged_in_user
-  before_action :load_wallet, :user_correct_wallet, only: :show
+  before_action :load_wallet, :user_correct_wallet, except: %i(create index new)
+
+  def index
+    @wallets = current_user.wallets.newest
+  end
+
   def new
     @wallet = Wallet.new
   end
@@ -18,8 +23,30 @@ class WalletsController < ApplicationController
 
   def show; end
 
-  def index
-    @wallets = current_user.wallets.newest
+  def edit; end
+
+  def update
+    if @wallet.update wallet_params
+      respond_to do |format|
+        format.js{flash.now[:success] = t ".edit_success_message"}
+      end
+    else
+      respond_to do |format|
+        format.js{flash.now[:danger] = t ".edit_failure_message"}
+      end
+    end
+  end
+
+  def destroy
+    if @wallet.destroy
+      respond_to do |format|
+        format.js{flash.now[:success] = t ".deleted_message"}
+      end
+    else
+      respond_to do |format|
+        format.js{flash.now[:danger] = t ".delete_failed_message"}
+      end
+    end
   end
 
   private
