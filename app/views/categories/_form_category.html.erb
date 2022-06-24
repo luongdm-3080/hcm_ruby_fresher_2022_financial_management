@@ -1,0 +1,12 @@
+<%= form_for(object, remote: remote) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name, t("name_category") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :name, t("category_type")%>
+  <div class="form-control_type">
+    <%= f.select :category_type, options_for_select(load_categories.category_types.keys.map {|k| [k.humanize, k]}) %>
+  </div>
+
+  <%= f.submit button_text, class: "btn btn-primary" %>
+<% end %>

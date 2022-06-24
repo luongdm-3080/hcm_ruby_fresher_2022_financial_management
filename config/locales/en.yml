@@ -1,4 +1,5 @@
 en:
+  base_title: Personal Financial Management
   layouts:
     footer:
       en: "English"
@@ -49,6 +50,9 @@ en:
       close: Close
     modal_edit:
       submit: Update
+    modal_create:
+      submit: Create
+      add_category: Add Category
   sessions:
     new:
       sign_up: "Sign up"
@@ -67,6 +71,7 @@ en:
   failure_message: "Sign up failed!"
   name_label: "Name Wallet"
   balance_label: "Balance"
+  view: "view"
   wallets:
     not_found: "Wallet not found"
     unauthorization: "You don't have permission to do this action"
@@ -101,3 +106,24 @@ en:
   header: "Delete Wallet"
   message: "Can sure wallet?????"
   header_edit: "Edit Wallet"
+
+  categories:
+    not_found: "Category not found"
+    unauthorization: "You don't have permission to do this action"
+    create:
+      success: "Create category success"
+    index:
+      category: Category
+      title: Categories
+      no_category: No category
+      header_create: Create category
+      category_type: Category type
+      create_at: Create at
+      number_transaction: Number transaction
+      status: Status
+      add_category: Add Category
+  category_name: "Category name: %{name}"
+  update_time: "Update %{update} ago"
+  category_type: Category type
+  name_category: Name category
+  add: Add

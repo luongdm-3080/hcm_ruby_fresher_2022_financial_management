@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
   include SessionsHelper
   before_action :set_locale
 
@@ -19,5 +20,12 @@ class ApplicationController < ActionController::Base
 
   def check_login
     redirect_to home_url if logged_in?
+  end
+
+  def user_corrects user_id, url
+    return if current_user? user_id
+
+    flash[:danger] = t ".unauthorization"
+    redirect_to url
   end
 end

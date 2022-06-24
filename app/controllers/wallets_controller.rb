@@ -14,7 +14,7 @@ class WalletsController < ApplicationController
     @wallet = current_user.wallets.build wallet_params
     if @wallet.save
       flash[:success] = t ".success"
-      redirect_to wallets_url
+      redirect_to wallets_path
     else
       flash.now[:danger] = t ".failure"
       render :new
@@ -22,8 +22,6 @@ class WalletsController < ApplicationController
   end
 
   def show; end
-
-  def edit; end
 
   def update
     if @wallet.update wallet_params
@@ -60,13 +58,10 @@ class WalletsController < ApplicationController
     return if @wallet
 
     flash[:danger] = t ".not_found"
-    redirect_to wallets_url
+    redirect_to wallets_path
   end
 
   def user_correct_wallet
-    return if current_user? @wallet.user_id
-
-    flash[:danger] = t ".unauthorization"
-    redirect_to wallets_url
+    user_corrects @wallet.user_id, wallets_path
   end
 end
