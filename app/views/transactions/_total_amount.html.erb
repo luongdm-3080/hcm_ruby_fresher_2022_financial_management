@@ -1,0 +1,22 @@
+<div class="transaction-div-1" currencylist="EUR">
+  <div class="transaction-div-2">
+    <div >
+      <div class="inflow">
+        <% income_total = total_of_transactions("income",).sum(:total) %>
+        <% expense_total = total_of_transactions("expense").sum(:total) %>
+        <span class="amount income tienvao">+€ <%= income_total %></span>
+        <div ><%= t "inflow_name" %></div>
+      </div>
+    </div>
+    <div >
+      <div class="outflow">
+        <span class="amount expense tienra">-€ <%= expense_total %></span>
+        <div ><%= t "outflow_name" %></div>
+      </div>
+    </div>
+    <div >
+      <div class="total-amount"><span  class="amount">€ <%= total_damage(income_total, expense_total) %></span></div>
+    </div>
+    <div tabindex="-1" class="view-report screen_13"></div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<%= form_for(object, remote: remote) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class = "chosen-select">
+    <%= f.label :wallet_name, t("wallet_label") %>
+    <%= f.select :wallet_id, options_from_collection_for_select(load_wallets, :id, :name) %>
+  </div>
+  <div class = "chosen-select">
+    <%= f.label :category_type, t("category_type") %>
+    <%= f.select :category_id, options_from_collection_for_select(load_categories, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :transaction_date %>
+    <%= f.datetime_field :transaction_date, class: "form-control col-sm-3", min: "2014-05-20T00:00:00", value: @time_now %>
+  </div>
+  <%= f.label :total, t("total_label") %>
+  <%= f.text_field :total, class: "form-control" %>
+  <%= f.label :description, t("description_label") %>
+  <%= f.text_area :description, class: "form-control" %>
+  <%= f.submit button_text, class: "btn btn-primary" %>
+<% end %>

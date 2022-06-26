@@ -1,0 +1,61 @@
+<div class="transaction-card">
+  <div>
+    <div class="list-transaction" >
+      <% if transactions_today_get(category).count > 0 %>
+        <div class="transaction-div-1 box-transaction">
+          <div class="transaction-div-4 toolbar-group toolbar-group-category">
+            <div class="mode-category-4">
+              <span ></span>
+              <%= image_tag Settings.image.image_1, class: "transaction-icon" %>
+              <%= image_tag Settings.image.image_2, class: "wallet-icon" %>
+              <p class="primary-text"><span  class="transaction-row"><span class="category-name">
+                <span  class=""><%= category.name %></span></span>
+                <% if category.category_type == "income" %>
+                  <span class="amount mode-view income">+€ <%= transactions_today_get(category).sum(:total) %></span>
+                <% else %>
+                  <span class="amount mode-view expense">-€ <%= transactions_today_get(category).sum(:total) %></span>
+                <% end %>
+                </span>
+              </p>
+              <p class="secondary-text"><%= t "count_transaction", count: transactions_today_get(category).count %></p>
+            </div>
+          </div>
+
+          <% transactions_today_get(category).each do |transaction| %>
+            <%= link_to wallet_transaction_url(wallet_id: @wallet_id, id: transaction.id) do %>
+              <div class="transaction-div-3">
+                <div tabindex="-1" class="transaction-item screen_2">
+                  <div class="transaction-header transaction-view-by-date">
+                    <div class="transaction-header-content">
+                      <div class="date-view"><span  class="view-day">
+                        <%= transaction.transaction_date.day %>
+                        </span> <span  class="view-date"><span class="days">
+                        <%= transaction.transaction_date.strftime("%A, %B %Y") %>
+                        </span> <span class="months">
+                          &nbsp;
+                        </span></span>
+                      </div>
+                       <% if transaction.category_type == "income" %>
+                        <div class="amount-view">
+                          <span class="amount income">
+                            +€ <%= transaction.total %>
+                          </span>
+                        </div>
+                      <% else %>
+                        <div class="amount-view">
+                          <span class="amount expense">
+                            -€ <%= transaction.total %>
+                          </span>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end%>
+    </div>
+  </div>
+</div>

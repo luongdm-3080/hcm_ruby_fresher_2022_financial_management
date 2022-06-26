@@ -9,4 +9,14 @@ module ApplicationHelper
   def load_categories
     current_user.categories
   end
+
+  def load_wallets
+    current_user.wallets
+  end
+
+  def path_to_wallets
+    return new_wallet_path if load_wallets.blank?
+
+    wallet_transactions_path(load_wallets.first.id)
+  end
 end

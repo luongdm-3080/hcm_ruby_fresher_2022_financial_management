@@ -21,7 +21,9 @@ class WalletsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @transactions = @wallet.transactions
+  end
 
   def update
     if @wallet.update wallet_params

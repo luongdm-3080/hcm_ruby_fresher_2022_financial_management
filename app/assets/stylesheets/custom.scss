@@ -1,7 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'color';
-@import "toastr/toastr"; 
+@import "toastr/toastr";
 
 footer {
   margin-top: 45px;
@@ -339,4 +339,35 @@ button.btn.save::before {
   h2 {
     font: 18px/24px 'Open Sans', sans-serif;
   }
+}
+.chosen-select  {
+  position: relative;
+  height: auto;
+  padding: 0px;
+  margin-bottom: 30px;
+  text-align: center;
+  select {
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    width: 300px;
+    padding: 8px;
+    text-align: center;
+    margin: 0 20px;
+    border: solid;
+    option {
+      width: 300px;
+      min-height: 60px;
+      max-height: 300px;
+      border-radius: 15px;
+      background-color: rgb(250, 250, 250);
+      box-shadow: 2px 4px 8px #c5c5c5;
+      transition: all 300ms;
+
+      }
+    }
+    label {
+      color: red;
+      display: flex;
+    }
 }
