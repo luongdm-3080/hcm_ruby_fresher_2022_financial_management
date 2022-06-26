@@ -1,4 +1,4 @@
-<div class="modal fade" id="modal<%=object.id%>" role="dialog">
+<div class="modal fade" id="modal<%= object.id %>" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -13,9 +13,9 @@
         <div class="category_type">
           <% if object.income? %>
             <i class="fa-solid fa-check-double"></i>
-          <%else%>
+          <% else %>
             <i class="fa-solid fa-circle-exclamation"></i>
-          <%end%>
+          <% end %>
           <%= object.category_type %>
         </div>
 

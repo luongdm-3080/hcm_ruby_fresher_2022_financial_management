@@ -19,9 +19,26 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def update; end
+  def update
+    if @category.update category_params
+      respond_to do |format|
+        format.js{flash.now[:success] = t ".edit_success_message"}
+      end
+    else
+      respond_to do |format|
+        format.js{flash.now[:danger] = t ".edit_failure_message"}
+      end
+    end
+  end
 
-  def destroy; end
+  def destroy
+    if @category.destroy
+      flash[:success] = t ".success_message"
+    else
+      flash[:danger] = t ".failure_message"
+    end
+    redirect_back_or categories_path
+  end
 
   private
 

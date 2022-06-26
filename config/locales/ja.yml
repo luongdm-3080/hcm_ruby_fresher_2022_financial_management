@@ -112,7 +112,9 @@ ja:
   header: "ウォレットを削除する"
   message: "確かに財布ができます?????"
   header_edit: "ウォレットの編集"
-
+  header_edit_category: "カテゴリ整理"
+  message_category: "確かに財布ができます????? "
+  header_category: カテゴリが削除されました
   categories:
     not_found: "カテゴリが見つかりません"
     unauthorization: "このアクションを実行する権限がありません"
@@ -128,6 +130,12 @@ ja:
       number_transaction: トランザクション数
       status: 状態
       add_category: カテゴリを追加
+    update:
+      edit_success_message: カテゴリの成功
+      edit_failure_message: アップデートに失敗しました
+    destroy:
+      success_message: 成功が削除されました
+      failure_message: 失敗が削除されました
   category_name: "カテゴリ名: %{name}"
   update_time: "%{update}前に更新"
   category_type: カテゴリタイプ

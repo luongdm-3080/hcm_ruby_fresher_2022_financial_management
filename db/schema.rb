@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_20_062250) do
+ActiveRecord::Schema.define(version: 2022_06_27_041040) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 2022_06_20_062250) do
     t.text "description"
     t.datetime "transaction_date"
     t.bigint "wallet_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_transactions_on_user_id"
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_transactions_on_category_id"
     t.index ["wallet_id"], name: "index_transactions_on_wallet_id"
   end
 
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2022_06_20_062250) do
   end
 
   add_foreign_key "categories", "users"
-  add_foreign_key "transactions", "users"
+  add_foreign_key "transactions", "categories"
   add_foreign_key "transactions", "wallets"
   add_foreign_key "wallets", "users"
 end

@@ -1,0 +1,10 @@
+<% if @category.errors.any? %>
+  <% @category.errors.full_messages.each do |msg| %>
+    toastr.error(`<%= msg %>`);
+  <% end %>
+  toastr.error("<%= flash[:danger] %>")
+<% else %>
+  $("#category" + <%= @category.id %>).replaceWith("<%= j(render @category) %>");
+  $(".modal-backdrop").remove();
+  toastr.success("<%= flash[:success] %>")
+<% end %>

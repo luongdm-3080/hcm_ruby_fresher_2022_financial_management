@@ -112,7 +112,9 @@ vi:
   header: "Xóa ví của bạn"
   message: "Bạn chắc là muốn xóa không????"
   header_edit: "Chính sửa ví"
-
+  header_edit_category: "Chỉnh sửa category"
+  message_category: "Bạn chắc muốn xóa chứ"
+  header_category: Xóa Category
   categories:
     not_found: "Category không tồn tại"
     unauthorization: "Không được phép truy cập"
@@ -128,6 +130,12 @@ vi:
       number_transaction: Số giao dịch
       status: Trạng thái
       add_category: Tạo Category
+    update:
+      edit_success_message: Cập nhật thành công
+      edit_failure_message: Cập nhật thất bại
+    destroy:
+      success_message: Xóa category thành công
+      failure_message: Xóa category thất bại
   category_name: "Tên category là : %{name}"
   update_time: "Cập nhât %{update} trước"
   category_type: Loại category

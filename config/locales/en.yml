@@ -106,7 +106,9 @@ en:
   header: "Delete Wallet"
   message: "Can sure wallet?????"
   header_edit: "Edit Wallet"
-
+  header_edit_category: "Edit Category"
+  message_category: "Can sure delete Category"
+  header_category: Delete Category
   categories:
     not_found: "Category not found"
     unauthorization: "You don't have permission to do this action"
@@ -122,6 +124,12 @@ en:
       number_transaction: Number transaction
       status: Status
       add_category: Add Category
+    update:
+      edit_success_message: Update success
+      edit_failure_message: Update Failure
+    destroy:
+      success_message: Delete success
+      failure_message: Delete fail
   category_name: "Category name: %{name}"
   update_time: "Update %{update} ago"
   category_type: Category type

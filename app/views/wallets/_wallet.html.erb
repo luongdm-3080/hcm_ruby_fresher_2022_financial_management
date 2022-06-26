@@ -15,13 +15,13 @@
     <span>||</span>
 
     <button type="button" class="btn edit btn-info" data-toggle="modal" data-target="#myModal<%=wallet.id%>">
-      <%= t("edit")%>
+      <%= t("edit") %>
     </button>
     <%= render "shared/modal_edit", object: wallet, render_ui: "wallets/form_wallet", header: t("header_edit") %>
     <span>||</span>
 
     <button type="button" class="btn cancel btn-link" data-toggle="modal" data-target="#myModal_delete<%=wallet.id%>">
-      <%= t("delete")%>
+      <%= t("delete") %>
     </button>
     <%= render "shared/modal_delete", object: wallet, remote: true, header: t("header"), message: t("message")  %>
   </span>
