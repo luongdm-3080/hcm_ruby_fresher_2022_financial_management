@@ -1,9 +1,9 @@
-<li class="item type<%=category.category_type%>">
+<li class="item type<%= category.category_type %>", id="category<%= category.id %>">
   <div class="task">
     <div class="icon"> </div>
     <div class="name"><%= category.name %></div>
   </div>
-  
+
   <div class="status">
     <% if category.income? %>
       <div class="icon on"> </div>
@@ -12,32 +12,38 @@
     <% end %>
     <div class="text"><%= category.category_type %></div>
   </div>
-  
+
   <div class="status">
-    <div class="text">  
+    <div class="text">
       <i class="bi bi-alarm-fill"></i>
       <%= t "create_time", time: time_ago_in_words(category.created_at) %>
     </div>
   </div>
-  
+
   <div class="statun">
     <div class="text">
       <i class="fa-solid fa-tent-arrow-left-right"></i>
       <%= category.id %>
     </div>
   </div>
-  
+
   <div class="priority">
     <div class = "icon_name">
       <div class="add-button">
-        <div class="sub-button tl"><%= t "edit" %></div>
+        <button type="button" class="sub-button tl" data-toggle="modal" data-target="#myModal<%= category.id %>">
+          <%= t "edit" %>
+        </button>
         <div class="sub-button tr"><%= t "add" %></div>
-        <div class="sub-button bl"><%= t "delete" %></div>
-        <button type="button" class="sub-button br" data-toggle="modal" data-target="#modal<%=category.id%>">
+        <button type="button" class="sub-button bl" data-toggle="modal" data-target="#myModal_delete<%= category.id %>">
+          <%= t "delete" %>
+        </button>
+        <button type="button" class="sub-button br" data-toggle="modal" data-target="#modal<%= category.id %>">
           <%= t "view" %>
         </button>
       </div>
     </div>
   </div>
+  <%= render "shared/modal_edit", object: category,  render_ui: "categories/form_category", header: t("header_edit_category") %>
+  <%= render "shared/modal_delete", object: category, remote: false, header: t("header_category"), message: t("message_category")  %>
   <%= render "show" , object: category %>
 </li>
