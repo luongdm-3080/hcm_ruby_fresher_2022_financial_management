@@ -1,0 +1,35 @@
+<% provide :title, t(".title") %>
+<section class = "category">
+  <div class = "header_category">
+    <div class="button-col">
+      <button class="btn" type="button" data-toggle="modal" data-target="#modalCreate">
+        <%= t ".add_category" %>
+      </button>
+      <%= render "shared/modal_create", object: @category, remote: true, render_form: "categories/form_category", header: t(".header_create") %>
+    </div>
+    <% if @categories.any? %>
+      <div class="status-col">
+        <label><%= t ".category_type" %></label>
+      </div>
+      <div class="progress-col">
+        <label><%= t ".create_at" %></label>
+      </div>
+      <div class="dates-col">
+        <label><%= t ".number_transaction" %></label>
+      </div>
+      <div class="priority-col">
+        <label><%= t ".status" %></label>
+      </div>
+    <% end %>
+  </div>
+
+  <ul class="task-items">
+    <% if @categories.any? %>
+      <%= "#{t(".category")} (#{@pagy.count})" %>
+      <%= render @categories %>
+      <%== pagy_bootstrap_nav @pagy %>
+    <% else %>
+      <h3><%= t ".no_category" %></h3>
+    <% end %>
+  </ul>
+</section>

@@ -37,9 +37,6 @@ class UsersController < ApplicationController
   end
 
   def user_correct
-    return if current_user? @user.id
-
-    flash[:danger] = t ".unauthorization"
-    redirect_to current_user
+    user_corrects @user.id, current_user
   end
 end

@@ -1,4 +1,5 @@
 vi:
+  base_title: Quản lý tài chính
   layouts:
     footer:
       en: "Tiếng Anh"
@@ -48,6 +49,9 @@ vi:
     modal_edit:
       submit: Cập nhật
     delete: Xóa ví
+    modal_create:
+      submit: Tạo
+      add_category: Thêm category
   activerecord:
     attributes:
       user:
@@ -108,3 +112,28 @@ vi:
   header: "Xóa ví của bạn"
   message: "Bạn chắc là muốn xóa không????"
   header_edit: "Chính sửa ví"
+
+  categories:
+    not_found: "Category không tồn tại"
+    unauthorization: "Không được phép truy cập"
+    create:
+      success: "Tạo category thành công"
+    index:
+      category: Category
+      title: Categories
+      no_category: Hiện tại không có Category nào!! Hãy tạo đi
+      header_create: Tạo category
+      category_type: Loại category
+      create_at: Thời gian gia tạo
+      number_transaction: Số giao dịch
+      status: Trạng thái
+      add_category: Tạo Category
+  category_name: "Tên category là : %{name}"
+  update_time: "Cập nhât %{update} trước"
+  category_type: Loại category
+  name_category: Tên category
+  edit: Chỉnh sửa
+  add: Thêm
+  delete: Xóa
+  view: Xem
+  close: Đóng

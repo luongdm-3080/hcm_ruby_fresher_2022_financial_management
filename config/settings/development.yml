@@ -5,3 +5,5 @@ digits:
   length_text_max_20: 20
 regex:
   email: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/'
+pagy_page:
+  default_page: 5

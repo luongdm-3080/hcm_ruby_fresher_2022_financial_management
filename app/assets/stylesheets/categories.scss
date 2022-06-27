@@ -1,0 +1,338 @@
+@import 'color';
+@import 'size';
+
+.category {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: $layoutWidth;
+}
+.header_category {
+  display: flex;
+  align-items: center;
+  font-size: $sizeDefault;
+  font-weight: 600;
+  color: $colorGrey;
+  padding: $standardPadding;
+  box-sizing: border-box;
+  user-select: none;
+  text-align: center;
+  .button-col {
+    width: $col1Width;
+    text-align: left;
+  }
+  .status-col {
+    width: $col2Width
+  }
+  .progress-col {
+    width: $col3Width
+  }
+  .icon-col {
+    width: $col6Width;
+    text-align: right;
+  }
+  button {
+    color: $colorWarning;
+    outline: none;
+    border: none;
+    background: darken($colorLightGrey, 10%);
+    padding: $standardPadding/2 $standardPadding;
+    border-radius: $layoutBorderRadius/2;
+    margin-right: $standardPadding;
+    font-size: $sizeDefault;
+    font-weight: 600;
+    &:hover {
+      cursor: pointer;
+      background: lighten($colorDark, 10%);
+    }
+  }
+  label {
+    display: inline-block;
+    margin: 0 $standardPadding;
+    text-align: center;
+    color: $color4;
+    font-style: italic;
+  }
+  .icon-col {
+    padding-right: 20px;
+  }
+}
+
+ul.task-items {
+  li.item {
+    display: flex;
+    align-items: center;
+    margin: $standardPadding 0;
+    padding: $standardPadding;
+    background: $colorWhite;
+    border-radius: $layoutBorderRadius;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+    &.typeincome .task {
+      .icon {
+        background: $color3;
+      }
+    }
+    &.typeexpense .task {
+      .icon {
+        background: $color2;
+      }
+    }
+    .task {
+      display: flex;
+      align-items: center;
+      width: $col1Width;
+      .icon {
+        background: $colorGrey;
+        width: 50px;
+        height: 50px;
+        border-radius: $layoutBorderRadius;
+      }
+      .name {
+        margin-left: $standardPadding;
+        width: 180px;
+        height: 25px;
+        font-weight: bold;
+        font-size: 17px;
+        font-style: italic;
+      }
+    }
+    .status {
+      display: flex;
+      align-items: center;
+      font-size: $sizeDefault;
+      color: $colorDarkGreen;
+      width: $col2Width;
+      margin-left: $standardPadding*1.5;
+      .icon {
+        background: $colorDarkGreen;
+        margin-right: $standardPadding/2;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        &.off {
+          background: $colorOff;
+        }
+        &.on {
+          background: $colorOn;
+        }
+      }
+    }
+    .statun {
+      display: flex;
+      align-items: center;
+      font-size: $sizeDefault;
+      color: $colorDarkGreenn;
+      width: $col2Width;
+      margin-left: $standardPadding*1.5;
+    }
+    .priority {
+      width: $col5Width*0.85;
+      .bar {
+        background: #ffcdd2;
+      }
+    }
+  }
+}
+@mixin transition($property: all, $duration: 300ms, $animate: linear, $delay:0s) {
+  transition: $property $duration $animate $delay;
+}
+
+.icon_name {
+  position: relative;
+}
+
+.add-button {
+  position: absolute;
+  right: 100px;
+  bottom: -28px;
+  width: 56px;
+  height: 56px;
+  overflow: visible;
+  -webkit-transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46),
+    color 0s ease .4s,font-size .2s;
+  -moz-transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46),
+    color 0s ease .4s,font-size .2s;
+  transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46),
+    color 0s ease .4s,font-size .2s;
+  text-align: center;
+  line-height: 56px;
+  font-size: 28px;
+  color: rgba(255,255,255,1);
+}
+
+.add-button:before {
+  position: relative;
+  z-index: 100;
+  content:"+";
+
+}
+.add-button:hover {
+  color: rgba(255,255,255,0);
+  transform: rotate(45deg);
+}
+
+.sub-button {
+  position: absolute;
+  display: inline-block;
+  background-color:#eb487f;
+  color: rgba(255,255,255,0);
+  width: 28px;
+  height: 28px;
+  line-height:48px;
+  font-family: "FontAwesome";
+  font-size: 12px;
+  -webkit-transition: top .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    left .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    bottom .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    right .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    width .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    height .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    transform .1s ease 0s,
+    border-radius .2s  ease .2s;
+   -moz-transition: top .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    left .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    bottom .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    right .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    width .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    height .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    transform .1s ease 0s,
+    border-radius .2s  ease .2s;
+   transition: top .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    left .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    bottom .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    right .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    width .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    height .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+    transform .1s ease 0s,
+    border-radius .2s  ease .2s;
+}
+
+.tl {
+  top: 0;
+  left: 0;
+  border-radius: 28px 0 0 0;
+}
+
+.tr {
+  top: 0;
+  right: 0;
+  border-radius: 0 28px 0 0;
+}
+
+.bl {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 0 28px;
+}
+
+.br {
+  bottom: 0;
+  right: 0;
+  border-radius: 0 0 28px 0;
+}
+
+
+.tl:before {
+  content:"";
+}
+
+.tr:before {
+  content:"";
+}
+
+.bl:before {
+  content:"";
+}
+
+.br:before {
+  content:"";
+}
+
+
+.add-button:hover .sub-button {
+  width: 48px;
+  height: 48px;
+  transform: rotate(-45deg);
+
+  color: rgba(255,255,255,1);
+  -webkit-transition: top .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    left .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    bottom .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    right .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    width .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    height .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    color .3s ease .8s,
+    transform .3s ease .8s,
+    border-radius .4s  ease .6s;
+   -moz-transition: top .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    left .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    bottom .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    right .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    width .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    height .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    color .3s ease .8s,
+    transform .3s ease .8s,
+    border-radius .4s  ease .6s;
+   transition: top .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    left .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    bottom .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    right .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    width .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    height .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+    color .3s ease .8s,
+    transform .3s ease .8s,
+    border-radius .4s  ease .6s;
+}
+
+.add-button:hover .tl {
+  top: -25px;
+  left: -25px;
+  border-radius: 28px;
+}
+
+.add-button:hover .tr {
+  top: -25px;
+  right: -25px;
+  border-radius: 28px;
+}
+
+.add-button:hover .bl {
+  bottom: -25px;
+  left: -25px;
+  border-radius: 28px;
+}
+
+.add-button:hover .br {
+  bottom: -25px;
+  right: -25px;
+  border-radius: 28px;
+}
+.modal-title-category{
+  text-align: center;
+  font-weight: bold;
+}
+.category_type {
+  text-align: center;
+  font-size: 20px;
+  color: $light-darker;
+}
+.update_time {
+  float: right;
+  color: $colorWarning;
+}
+.user-name {
+  text-align: center;
+}
+.form-control_type {
+  color: $danger-text;
+  padding: 20px;
+  select {
+    font-size: 15px;
+    padding: 8px;
+    text-align: center;
+  }
+}
+button.close {
+  font-size: 30px;
+  color: $red;
+  background-color: $gray-666;
+}

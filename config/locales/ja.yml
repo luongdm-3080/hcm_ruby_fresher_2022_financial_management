@@ -1,4 +1,5 @@
 ja:
+  base_title: 個人財務管理
   layouts:
     footer:
       en: "英語"
@@ -47,7 +48,10 @@ ja:
       close: 閉まる
     modal_edit:
       submit: アップデート
+    modal_create:
+      submit: 作成
     delete: 削除する
+
   activerecord:
     attributes:
       user:
@@ -108,3 +112,26 @@ ja:
   header: "ウォレットを削除する"
   message: "確かに財布ができます?????"
   header_edit: "ウォレットの編集"
+
+  categories:
+    not_found: "カテゴリが見つかりません"
+    unauthorization: "このアクションを実行する権限がありません"
+    create:
+      success: "カテゴリの成功を作成する"
+    index:
+      category: カテゴリ
+      title: カテゴリ
+      no_category: カテゴリなし
+      header_create: カテゴリを作成
+      category_type: カテゴリタイプ
+      create_at: 作成
+      number_transaction: トランザクション数
+      status: 状態
+      add_category: カテゴリを追加
+  category_name: "カテゴリ名: %{name}"
+  update_time: "%{update}前に更新"
+  category_type: カテゴリタイプ
+  name_category: カテゴリ名
+  add: 追加
+  view: 見る
+  close: 閉める

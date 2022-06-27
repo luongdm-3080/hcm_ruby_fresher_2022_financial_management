@@ -1,0 +1,36 @@
+<div class="modal fade" id="modal<%=object.id%>" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title-category"><%= t "category_name", name: object.name %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="user-name">
+          <i class="fa-solid fa-user-check"></i>
+          <%= current_user.name %>
+        </div>
+        <div class="category_type">
+          <% if object.income? %>
+            <i class="fa-solid fa-check-double"></i>
+          <%else%>
+            <i class="fa-solid fa-circle-exclamation"></i>
+          <%end%>
+          <%= object.category_type %>
+        </div>
+
+        <div class="text">  
+          <i class="bi bi-alarm-fill"></i>
+          <%= t "create_time", time: time_ago_in_words(object.created_at) %>
+          <span class = "update_time">
+            <i class="fa-solid fa-wrench"></i>
+            <%= t "update_time", update: time_ago_in_words(object.updated_at) %>
+          </span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t "close" %></button>
+      </div>
+    </div> 
+  </div>
+</div>

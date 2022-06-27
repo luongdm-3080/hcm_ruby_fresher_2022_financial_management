@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModal_delete" role="dialog">
+<div class="modal fade" id="myModal_delete<%=object.id%>" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -10,12 +10,12 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">
-          <%= link_to t("delete"), object, method: :delete, remote: :true %>
+          <%= link_to t("delete"), object, method: :delete, remote: remote %>
         </button>
         <button type="button" class="btn btn-default" data-dismiss="modal">
           <%= t ".close" %>
         </button>
       </div>
-    </div> 
+    </div>
   </div>
 </div>
