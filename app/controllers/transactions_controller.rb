@@ -1,7 +1,8 @@
 class TransactionsController < ApplicationController
   before_action :logged_in_user
-  before_action :user_correct_wallet, except: :create
-  before_action :load_wallet_transaction, only: :show
+  before_action :load_transaction, only: %i(update destroy)
+  before_action :user_correct_wallet, except: %i(create)
+  before_action :load_wallet_transaction, only: %i(show)
 
   def index
     @wallet_id = params[:wallet_id]
@@ -21,6 +22,29 @@ class TransactionsController < ApplicationController
 
   def show; end
 
+  def update
+    if @transaction.update transaction_params
+      respond_to do |format|
+        format.js{flash.now[:success] = t ".edit_success_message"}
+      end
+    else
+      respond_to do |format|
+        format.js{flash.now[:danger] = t ".edit_failure_message"}
+      end
+    end
+  end
+
+  def destroy
+    @wallet_id = params[:wallet_id]
+    if @transaction.destroy
+      flash[:success] = t ".success_message"
+      redirect_to path_to_wallets
+    else
+      flash[:danger] = t ".failure_message"
+      redirect_to @transaction
+    end
+  end
+
   private
 
   def transaction_params
@@ -35,8 +59,17 @@ class TransactionsController < ApplicationController
     redirect_to new_wallet_path
   end
 
+  def load_transaction
+    @transaction = Transaction.find_by id: params[:id]
+    @wallet_id = @transaction.wallet_id
+    return if @transaction
+
+    flash[:danger] = t "not_found"
+    redirect_to path_to_wallets
+  end
+
   def user_correct_wallet
-    @wallet = Wallet.find_by id: params[:wallet_id]
+    @wallet = Wallet.find_by id: params[:wallet_id] || @wallet_id
     return redirect_to new_wallet_path if @wallet.nil?
 
     user_corrects @wallet.user_id, new_wallet_path

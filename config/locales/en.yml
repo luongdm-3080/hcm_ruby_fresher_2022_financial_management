@@ -137,15 +137,14 @@ en:
   add: Add
   not_found: "Transaction not found"
   unauthorization: "You don't have permission to do this action"
-
+  name_wallet: "Wallet name: %{name}"
   transactions:
+    create_time: "Create %{time} ago"
+    update_time: "Update %{update} ago"
     show:
       header: Transaction details
       delete: Delete
       edit: Edit
-      create_time: "Create %{time} ago"
-      update_time: "Update %{update} ago"
-      wallet_name: "Wallet name: %{name}"
       unauthorization: "You don't have permission to do this action"
     index:
       add_transaction: Add transaction
@@ -153,6 +152,9 @@ en:
       unauthorization: "You don't have permission to do this action"
     create:
       success: Create transactions success
+    update:
+      edit_failure_message: "Update failed"
+      edit_success_message: "Update success"
   count_transaction: "%{count} Transactions"
   inflow_name: "Inflow"
   outflow_name: "Outflow"

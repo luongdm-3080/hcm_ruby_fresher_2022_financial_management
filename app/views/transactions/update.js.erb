@@ -1,0 +1,9 @@
+<% if @transaction.errors.any? %>
+  <% @transaction.errors.full_messages.each do |msg| %>
+    toastr.error(`<%= msg %>`);
+  <% end %>
+  toastr.error("<%= flash[:danger] %>")
+<% else %>
+  $("#transaction" + <%= @transaction.id %>).replaceWith("<%= j render 'show_transaction' %>");
+  toastr.success("<%= flash[:success] %>")
+<% end %>
