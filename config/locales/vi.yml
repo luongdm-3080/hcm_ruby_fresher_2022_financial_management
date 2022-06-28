@@ -106,7 +106,7 @@ vi:
       edit_success_message: "Cập nhập thành công"
     destroy:
       deleted_message: "Xóa ví thành công"
-  create_time: "c"
+  create_time: "Đã tao %{time} trước kia"
   wallet_name: "Tên ví là: %{name} ||"
   wallet_balance: "Số tiền là: $%{balance} ||"
   header: "Xóa ví của bạn"
@@ -145,6 +145,7 @@ vi:
   delete: Xóa
   view: Xem
   close: Đóng
+  name_wallet: "Tên ví là: %{name}"
   transactions:
     show:
       header: Chi tiết giao dịch
