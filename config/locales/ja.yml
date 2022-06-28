@@ -143,6 +143,7 @@ ja:
   add: 追加
   view: 見る
   close: 閉める
+  name_wallet: "ウォレット名：%{name}"
   transactions:
     show:
       header: 取引の詳細
