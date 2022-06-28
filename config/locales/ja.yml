@@ -143,3 +143,16 @@ ja:
   add: 追加
   view: 見る
   close: 閉める
+  transactions:
+    show:
+      header: 取引の詳細
+      delete: 削除
+      edit: 整理
+      create_time: "%{time} 前に作成"
+      update_time: "%{update}前に更新"
+      wallet_name: "ウォレット名: %{name}"
+    index:
+      add_transaction: トランザクションの追加
+  transactions: "%{count} トランザクション "
+  inflow_name: "流入"
+  outflow_name: "流出"

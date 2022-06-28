@@ -7,3 +7,8 @@ regex:
   email: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/'
 pagy_page:
   default_page: 5
+image:
+  image_1: https://static.moneylover.me/img/icon/ic_category_transport.png
+  image_2: https://static.moneylover.me/img/icon/icon.png
+time: '%Y-%m-%dT%k:%M'
+latest: 5
