@@ -15,7 +15,7 @@ module ApplicationHelper
   end
 
   def path_to_wallets
-    return new_wallet_path if load_wallets.blank?
+    return new_wallet_path if load_wallets.first&.id.nil?
 
     wallet_transactions_path(load_wallets.first.id)
   end

@@ -10,5 +10,5 @@ pagy_page:
 image:
   image_1: https://static.moneylover.me/img/icon/ic_category_transport.png
   image_2: https://static.moneylover.me/img/icon/icon.png
-time: '%Y-%m-%dT%k:%M'
+time: '%FT%R'
 latest: 5

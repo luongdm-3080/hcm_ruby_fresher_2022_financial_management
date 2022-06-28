@@ -91,7 +91,6 @@ ja:
       failure: "ウォレットの作成に失敗"
     index:
       title: "私の財布"
-      transactions: 取引
       no_wallet: "ウォレットなし"
     show:
       title: "私の財布"
@@ -153,7 +152,30 @@ ja:
       update_time: "%{update}前に更新"
       wallet_name: "ウォレット名: %{name}"
     index:
-      add_transaction: トランザクションの追加
-  transactions: "%{count} トランザクション "
+      add_transaction: トランザクション
+      header_create: トランザクションを作成する
+      unauthorization: "このアクションを実行する権限がありません"
+      select: ウォレット名を選ぶ
+    create:
+      success: トランザクションの成功を作成する
+    update:
+      edit_failure_message: "ランザクションに失敗しました"
+      edit_success_message: "トランザクションの成功"
+    destroy:
+      success_message: 成功が削除されました
+      failure_message: 失敗が削除されました
+  count_transaction: "%{count} トランザクション "
   inflow_name: "流入"
   outflow_name: "流出"
+  search: 探す
+  header_search: トランザクションを探す
+  start_label: 始まる時間
+  end_label: 次の時間
+  wallet_label: ウォレット名
+  transaction_date: トランザクションの時間
+  total_label: 金
+  description_label: 伝言
+  header_transaction: トランザクションが削除されました
+  message_transaction: "トランザクションが削除されました 確かに財布ができます????? "
+  edit_transaction: トランザクションが整理
+  transactions_wallet: トランザクション

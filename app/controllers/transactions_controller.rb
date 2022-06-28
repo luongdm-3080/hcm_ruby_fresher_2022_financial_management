@@ -3,6 +3,7 @@ class TransactionsController < ApplicationController
   before_action :user_correct_wallet, except: %i(create destroy update)
   before_action :load_wallet_transaction, only: %i(show)
   before_action :load_transaction, only: %i(update destroy)
+  before_action :time_start_day, :time_end_day, only: :index
 
   def index
     @wallet_id = params[:wallet_id]
@@ -71,6 +72,20 @@ class TransactionsController < ApplicationController
     return redirect_to new_wallet_path if @wallet.nil?
 
     user_corrects @wallet.user_id, new_wallet_path
+  end
+
+  def time_start_day
+    if params[:start_day].blank?
+      return @start_day = Time.zone.now.beginning_of_day
+    end
+
+    @start_day = params[:start_day]
+  end
+
+  def time_end_day
+    return @end_day = Time.zone.now.end_of_day if params[:end_day].blank?
+
+    @end_day = params[:end_day]
   end
 
   def create_update_balance transaction

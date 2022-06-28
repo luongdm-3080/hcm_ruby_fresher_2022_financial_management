@@ -9,7 +9,7 @@
     <%= f.select :category_id, options_from_collection_for_select(load_categories, :id, :name) %>
   </div>
   <div class="field">
-    <%= f.label :transaction_date %>
+    <%= f.label :transaction_date, t("transaction_date") %>
     <%= f.datetime_field :transaction_date, class: "form-control col-sm-3", min: "2014-05-20T00:00:00", value: @time_now %>
   </div>
   <%= f.label :total, t("total_label") %>

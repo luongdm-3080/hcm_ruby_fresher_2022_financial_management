@@ -22,7 +22,7 @@ class WalletsController < ApplicationController
   end
 
   def show
-    @transactions = @wallet.transactions
+    @transactions = @wallet.transactions.latest
   end
 
   def update

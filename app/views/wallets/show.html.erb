@@ -15,7 +15,13 @@
         <span class="total-balance"><%= @wallet.balance %></span>
       </h2>
       <div class="transactions">
+        <% if @transactions.any? %>
+          <% @transactions.each do |c| %>
+            <%= render "show_transaction_list", transaction: c %>
+          <% end %>
+        <% else %>
         <h3><%= t ".no_transaction" %></h3>
+        <% end %>
       </div>
     </content>
   </div>

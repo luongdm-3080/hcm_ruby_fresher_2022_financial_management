@@ -1,13 +1,14 @@
 module TransactionsHelper
-  def total_of_transactions status, day = Time.zone.today.all_day
-    Transaction.transactions_today(@wallet_id, day).status_transaction(status)
+  def category_type_of_transactions category_type
+    change = Transaction.transactions_today(@wallet_id, @start_day, @end_day)
+    change.category_type_transaction(category_type)
   end
 
   def total_damage income_total, expense_total
     income_total - expense_total
   end
 
-  def transactions_today_get category, day = Time.zone.today.all_day
-    category.transactions.transactions_today(@wallet_id, day)
+  def transactions_by_date category
+    category.transactions.transactions_today(@wallet_id, @start_day, @end_day)
   end
 end

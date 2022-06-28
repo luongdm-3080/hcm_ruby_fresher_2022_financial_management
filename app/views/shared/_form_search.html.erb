@@ -1,0 +1,23 @@
+<div class="modal fade" id="modalSearch" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title-category"><%= t "header_search" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag url, method: :get do %>
+          <div class="field-left">
+            <%= label_tag :start_day, t("start_label") %>
+            <%= datetime_field_tag :start_day, class: "form-control col-sm-3" %>
+          </div>
+          <div class="field-right">
+            <%= label_tag :end_day , t("end_label")%>
+            <%= datetime_field_tag :end_day, class: "form-control col-sm-3" %>
+          </div>
+          <%= submit_tag t("search"), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

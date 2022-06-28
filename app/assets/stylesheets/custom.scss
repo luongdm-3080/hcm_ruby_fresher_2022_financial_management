@@ -371,3 +371,12 @@ button.btn.save::before {
       display: flex;
     }
 }
+.icon-header {
+  margin-right: 50px;
+}
+.icon-header i {
+  padding: 5px;
+  margin-right: 12px;
+  color: $colorOn;
+  font-size: 20px;
+}
