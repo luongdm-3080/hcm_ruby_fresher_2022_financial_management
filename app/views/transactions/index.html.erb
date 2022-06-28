@@ -1,15 +1,23 @@
+<div class="button-group">
+  <button type="button" class="search" data-toggle="modal" data-target="#modalSearch">
+    <i class="fas fa-search"></i>
+    <%= t "search" %>
+  </button>
+  <%= render "shared/form_search", url: wallet_transactions_path(wallet_id: @wallet_id) %>
+  <div class="button-col">
+    <button class="btn add-transaction" type="button" data-toggle="modal" data-target="#modalCreate">
+      <i class="fa-solid fa-plus"></i>
+      <%= t ".add_transaction" %>
+    </button>
+    <%= render "shared/modal_create", object: @transaction, remote: true, render_form: "form_transaction", header: t(".header_create") %>
+  </div>
+</div>
 <select onchange="window.location=this.value" class="form-control form-select">
   <option><%= t ".select" %></option>
   <% load_wallets.each do |w| %>
     <option value="<%= wallet_transactions_path(wallet_id: w.id) %>"><%= w.name %></option>
   <% end %>
 </select>
-<div class="button-col">
-   <button class="btn" type="button" data-toggle="modal" data-target="#modalCreate">
-      <%= t ".add_transaction" %>
-    </button>
-   <%= render "shared/modal_create", object: @transaction, remote: true, render_form: "form_transaction", header: t(".header_create") %>
-</div>
 <div class = "master-detail-container master-detail-flex">
   <div class="transaction-content-box">
     <div id="transaction-content-dialog">

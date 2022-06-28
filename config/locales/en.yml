@@ -163,3 +163,7 @@ en:
   total_label: Total
   description_label: Description
   failed_update: Update Failure
+  search: SEARCH
+  header_search: Search transaction
+  start_label: Start day
+  end_label: End day

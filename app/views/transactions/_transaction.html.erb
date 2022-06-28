@@ -1,7 +1,7 @@
 <div class="transaction-card">
   <div>
     <div class="list-transaction" >
-      <% if transactions_today_get(category).count > 0 %>
+      <% if transactions_by_date(category).count > 0 %>
         <div class="transaction-div-1 box-transaction">
           <div class="transaction-div-4 toolbar-group toolbar-group-category">
             <div class="mode-category-4">
@@ -11,17 +11,17 @@
               <p class="primary-text"><span  class="transaction-row"><span class="category-name">
                 <span  class=""><%= category.name %></span></span>
                 <% if category.category_type == "income" %>
-                  <span class="amount mode-view income">+€ <%= transactions_today_get(category).sum(:total) %></span>
+                  <span class="amount mode-view income">+€ <%= transactions_by_date(category).sum(:total) %></span>
                 <% else %>
-                  <span class="amount mode-view expense">-€ <%= transactions_today_get(category).sum(:total) %></span>
+                  <span class="amount mode-view expense">-€ <%= transactions_by_date(category).sum(:total) %></span>
                 <% end %>
                 </span>
               </p>
-              <p class="secondary-text"><%= t "count_transaction", count: transactions_today_get(category).count %></p>
+              <p class="secondary-text"><%= t "count_transaction", count: transactions_by_date(category).count %></p>
             </div>
           </div>
 
-          <% transactions_today_get(category).each do |transaction| %>
+          <% transactions_by_date(category).each do |transaction| %>
             <%= link_to wallet_transaction_url(wallet_id: @wallet_id, id: transaction.id) do %>
               <div class="transaction-div-3">
                 <div tabindex="-1" class="transaction-item screen_2">

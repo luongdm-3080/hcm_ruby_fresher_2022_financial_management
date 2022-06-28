@@ -156,6 +156,29 @@ vi:
       wallet_name: "Tên vi là : %{name}"
     index:
       add_transaction: Thêm giao dịch
-  transactions: "Giao dịch %{count}"
+      header_create: Tạo giao dịch
+      unauthorization: "Bạn không thể truy cập"
+      select: Lựa chọn ví
+    create:
+      success: Tạo giao dịch thành công
+    update:
+      edit_failure_message: "Cập nhật thất bại"
+      edit_success_message: "Cập nhật giao dịch thành công"
+    destroy:
+      success_message: Xóa giao dịch thành công
+      failure_message: Xóa giao dịch thất bại
+  count_transaction: "Giao dịch %{count}"
   inflow_name: "Dòng vào"
   outflow_name: "Dòng ra"
+  search: Tìm kiếm
+  header_search: Tìm kiếm transactions
+  start_label: Điểm thời gian đầu
+  end_label: Điểm thờ gian tiếp
+  wallet_label: Tên ví
+  transaction_date: Thời gian giao dịch
+  total_label: Số tiền
+  description_label: Note
+  header_transaction: Xóa giao dịch
+  message_transaction: "Xóa giao dịch này bạn chắc chắn muốn chứ "
+  edit_transaction: Chỉnh sửa giao dịch
+  transactions_wallet: Xem ví

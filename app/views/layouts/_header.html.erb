@@ -10,6 +10,10 @@
         <%= link_to t(".base_title"), home_url, class: "logo" %>
         <%= link_to t(".add_wallet"), new_wallet_url, class: "btn add btn-primary" %>
         <ul>
+          <span class ="icon-header">
+            <i class="fa-solid fa-user-graduate"></i>
+            <i class="fa-solid fa-bell"></i>
+          </span>
           <li>
             <button type="button" class="btn btn-default btn-sm">
               <span class="glyphicon glyphicon-log-out" ></span>
@@ -24,7 +28,7 @@
       <ul>
         <li>
           <span class="icon"><i class="fas fa-book"></i></span>
-          <%= link_to t(".transactions"), path_to_wallets , class: "title" %>
+          <%= link_to t(".transactions"), path_to_wallets, class: "title" %>
         </li>
         <li>
           <span class="icon"><i class="fas fa-file-video"></i></span>

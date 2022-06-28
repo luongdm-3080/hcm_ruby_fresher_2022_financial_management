@@ -2,8 +2,8 @@
   <div class="transaction-div-2">
     <div >
       <div class="inflow">
-        <% income_total = total_of_transactions("income",).sum(:total) %>
-        <% expense_total = total_of_transactions("expense").sum(:total) %>
+        <% income_total = category_type_of_transactions("income").sum(:total) %>
+        <% expense_total = category_type_of_transactions("expense").sum(:total) %>
         <span class="amount income tienvao">+€ <%= income_total %></span>
         <div ><%= t "inflow_name" %></div>
       </div>
