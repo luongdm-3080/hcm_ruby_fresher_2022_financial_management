@@ -16,4 +16,5 @@ class Transaction < ApplicationRecord
     .where categories: {category_type: category_type}
   end)
   scope :latest, ->{order(transaction_date: :desc).limit Settings.latest}
+  scope :category_transaction, ->{Transaction.joins(:category)}
 end

@@ -155,6 +155,9 @@ en:
     update:
       edit_failure_message: "Update failed"
       edit_success_message: "Update success"
+    destroy:
+      success_message: Delete success
+      failure_message: Delete fail
   count_transaction: "%{count} Transactions"
   inflow_name: "Inflow"
   outflow_name: "Outflow"

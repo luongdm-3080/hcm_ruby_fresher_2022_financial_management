@@ -26,13 +26,19 @@
 
     <div class="sidebar">
       <ul>
+        <% if is_admin? %>
+          <li>
+            <span class="icon"><i class="fa-solid fa-users"></i></span>
+            <%= link_to "Admin", admin_root_path, class: "title" %>
+          </li>
+        <% end %>
         <li>
           <span class="icon"><i class="fas fa-book"></i></span>
           <%= link_to t(".transactions"), path_to_wallets, class: "title" %>
         </li>
         <li>
           <span class="icon"><i class="fas fa-file-video"></i></span>
-          <%= link_to t(".report"), "#", class: "title" %>
+          <%= link_to t(".report"), path_to_chart, class: "title" %>
         </li>
         <li>
           <span class="icon"><i class="fas fa-volleyball-ball"></i></span>

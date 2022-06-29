@@ -11,4 +11,8 @@ module TransactionsHelper
   def transactions_by_date category
     category.transactions.transactions_today(@wallet_id, @start_day, @end_day)
   end
+
+  def day_of_transactions
+    Transaction.transactions_today(@wallet_id, @start_day, @end_day)
+  end
 end

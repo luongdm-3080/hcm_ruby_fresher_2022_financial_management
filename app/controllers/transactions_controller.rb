@@ -3,7 +3,7 @@ class TransactionsController < ApplicationController
   before_action :user_correct_wallet, except: %i(create destroy update)
   before_action :load_wallet_transaction, only: %i(show)
   before_action :load_transaction, only: %i(update destroy)
-  before_action :time_start_day, :time_end_day, only: :index
+  before_action :time_start_day, :time_end_day, only: %i(index chart)
 
   def index
     @wallet_id = params[:wallet_id]
@@ -43,6 +43,10 @@ class TransactionsController < ApplicationController
       flash[:danger] = t ".failure_message"
       redirect_to @transaction
     end
+  end
+
+  def chart
+    @wallet_id = params[:wallet_id]
   end
 
   private
