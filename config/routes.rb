@@ -17,5 +17,9 @@ Rails.application.routes.draw do
     end
     resources :categories, except: %i(new show edit)
     resources :transactions, only: %i(create destroy update)
+    namespace :admin do
+      root "users#index"
+      resources :users, only: :index
+    end
   end
 end

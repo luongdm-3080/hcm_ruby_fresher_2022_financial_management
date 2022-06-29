@@ -1,0 +1,44 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".welcome" %></h1>
+
+<%== pagy_bootstrap_nav @pagy %>
+<div class="page-breadcrumb">
+  <div class="row">
+    <div class="col-6">
+      <div class="text-right">
+        <small><%= t ".user" %></small>
+        <h5 class="text-info"><%= @pagy.count %></h5>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+        </div>
+        <div class="table-responsive">
+          <table class="table v-middle">
+            <thead>
+              <tr class="bg-light">
+                <th class="border-top-0"><%= t ".name" %></th>
+                <th class="border-top-0"><%= t ".email" %></th>
+                <th class="border-top-0"><%= t ".role" %></th>
+                <th class="border-top-0"><%= t ".actived" %></th>
+                <th class="border-top-0"><%= t ".categories_total" %></th>
+                <th class="border-top-0"><%= t ".wallets_total" %></th>
+                <th class="border-top-0"><%= t ".balance_total" %></th>
+              </tr>
+            </thead>
+            <ul class="users">
+              <%= render @users %>
+            </ul>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%== pagy_bootstrap_nav @pagy %>
