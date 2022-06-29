@@ -167,6 +167,14 @@ vi:
     destroy:
       success_message: Xóa giao dịch thành công
       failure_message: Xóa giao dịch thất bại
+    chart_analysis:
+      total_transaction_day: Tổng số giao dịch
+      total_category_type: Tổng số category
+      select: Tên ví
+      search_chart: Tìm kiếm
+      total_category_name: Phân theo tên category
+      no_transaction: Không có giao dịch nào
+      unauthorization: "Không được phép truy cập"
   count_transaction: "Giao dịch %{count}"
   inflow_name: "Dòng vào"
   outflow_name: "Dòng ra"
@@ -182,3 +190,6 @@ vi:
   message_transaction: "Xóa giao dịch này bạn chắc chắn muốn chứ "
   edit_transaction: Chỉnh sửa giao dịch
   transactions_wallet: Xem ví
+  xtitle: Thời gian giao dịch
+  ytitle: tổng
+  label_transaction: giao dịch
