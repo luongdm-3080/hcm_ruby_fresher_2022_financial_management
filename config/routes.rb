@@ -14,6 +14,6 @@ Rails.application.routes.draw do
       resources :transactions, only: %i(index show)
     end
     resources :categories, except: %i(new show edit)
-    resources :transactions, only: :create
+    resources :transactions, only: %i(create destroy update)
   end
 end

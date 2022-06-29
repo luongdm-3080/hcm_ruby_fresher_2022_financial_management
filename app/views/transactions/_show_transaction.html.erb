@@ -1,0 +1,46 @@
+<div class="content-view" id="transaction<%= @transaction.id %>">
+  <div class="cate-note">
+    <div class="image-cate-amount left-detail"><%= image_tag Settings.image.image_1, class: "image_1" %></div>
+    <div class="cate-note-amount-content">
+      <h3 >
+        <%= @transaction.name %>
+      </h3>
+      <div class="wallet-tran">
+        <i class="bi bi-award-fill"></i>
+        <%= @transaction.id %>
+      </div>
+      <div class="date-tran">
+        <i class="bi bi-calendar-day"></i>
+        <%= @transaction.transaction_date.strftime(Settings.time_date) %>
+      </div>
+    </div>
+    <div class = "cate-note-right_box">
+      <div class = "create_at">
+        <i class="fa-solid fa-clock"></i>
+        <%= t "create_time", time: time_ago_in_words(@transaction.created_at) %>
+      </div>
+      <div>
+        <i class="fa-regular fa-clock"></i>
+        <%= t "update_time", update: time_ago_in_words(@transaction.updated_at) %>
+      </div>
+      <div><span class="amount-name <%= @transaction.category_type %>"><%= @transaction.category_type %></span> </div>
+    </div>
+  </div>
+  <div class="flex offset-xs2">
+    <div class="amount-detail ">
+      <% if @transaction.category_type == "income" %>
+        <span class="income">+€ <%= @transaction.total %></span>
+      <% else %>
+        <span class="expense">-€ <%= @transaction.total %></span>
+      <% end %>
+    </div>
+  </div>
+  <div class="user-edit">
+    <div class="user-edit-name">
+      <span class="user-name">
+        <i class="fa-regular fa-address-card"></i>
+        <%= t "name_wallet", name: @transaction.wallet.name %>
+      </span>
+    </div>
+  </div>
+</div>

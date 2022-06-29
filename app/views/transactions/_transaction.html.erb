@@ -30,7 +30,7 @@
                       <div class="date-view"><span  class="view-day">
                         <%= transaction.transaction_date.day %>
                         </span> <span  class="view-date"><span class="days">
-                        <%= transaction.transaction_date.strftime("%A, %B %Y") %>
+                        <%= transaction.transaction_date.strftime(Settings.time_date) %>
                         </span> <span class="months">
                           &nbsp;
                         </span></span>
