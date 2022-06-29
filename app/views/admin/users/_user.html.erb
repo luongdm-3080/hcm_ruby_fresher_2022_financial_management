@@ -1,1 +1,27 @@
-<p>user <%= user.name %></p>
+<tbody>
+  <tr>
+    <td>
+      <div class="d-flex align-items-center">
+        <div class="m-r-10">
+        <button type="button" class="btn btn-circle btn-info text-white" data-toggle="modal" data-target="#modalUser<%= user.id %>">
+          <%= t "show" %>
+        </button>
+        </div>
+        <div class="">
+          <h4 class="m-b-0 font-16"><%= user.name %></h4>
+        </div>
+      </div>
+    </td>
+    <td><%= user.email %></td>
+    <td><%= user.role %></td>
+    <td>
+      <label class="label label-danger"><%= user.activated %></label>
+    </td>
+    <td><%= user.categories.count %></td>
+    <td><%= user.wallets.count %></td>
+    <td>
+      <h5 class="m-b-0">$<%= user.wallets.sum(:balance) %></h5>
+    </td>
+  </tr>
+</tbody>
+<%= render "shared/show_user" , object: user %>

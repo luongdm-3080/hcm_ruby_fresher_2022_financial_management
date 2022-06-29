@@ -17,6 +17,7 @@ vi:
       help: Hỗ trợ
       menu: Menu
       log_out: Đăng xuất
+      admin: Quản trị viên
   static_pages:
     home:
       title: "Trang chủ"
@@ -52,6 +53,11 @@ vi:
     modal_create:
       submit: Tạo
       add_category: Thêm category
+    show_user:
+      user_name: "Tên người dùng: %{name}"
+      categories_total: Tổng category
+      wallets_total: Tổng số ví
+      balance_total: Tổng số dư
   activerecord:
     attributes:
       user:
@@ -182,3 +188,17 @@ vi:
   message_transaction: "Xóa giao dịch này bạn chắc chắn muốn chứ "
   edit_transaction: Chỉnh sửa giao dịch
   transactions_wallet: Xem ví
+  admin:
+    users:
+      index:
+        title: Người dùng
+        welcome: Tất cả người sử dụng
+        name: Tên người dùng
+        email: Email
+        role: Role
+        actived: Đã kích hoạt
+        categories_total: Tổng category
+        wallets_total: Tổng số ví
+        balance_total: Tổng số dư
+        user: Tổng số người dùng
+  show: Cho xem

@@ -1,0 +1,50 @@
+<div class="modal fade" id="modalUser<%= object.id %>" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title-category"><%= t ".user_name", name: object.name %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="center">
+          <div class="container-user">
+            <div class="left">
+              <div class="photo">
+                <div class="circle"></div>
+                <div class="circle2"></div>
+                <%= image_tag Settings.image.image_3, class: "image_3" %>
+              </div>
+              <div class="title__contain">
+                <div class="username"><%= object.name %></div>
+              </div>
+              <button class="create_time">
+                <i class="bi bi-alarm-fill"></i>
+                <%= t "create_time", time: time_ago_in_words(object.created_at) %>
+              </button>
+              <button class="update_time">
+                <i class="fa-solid fa-wrench"></i>
+                <%= t "update_time", update: time_ago_in_words(object.updated_at) %></button>
+            </div>
+            <div class="right">
+              <div class="rightbox">
+                <span class="large"><%= object.wallets.count %></span>
+                <span class="small"><%= t ".wallets_total" %></span>
+              </div>
+              <div class="rightbox">
+                <span class="large"><%= object.categories.count %></span>
+                <span class="small"><%= t ".category_total" %></span>
+              </div>
+              <div class="rightbox">
+                <span class="large"><%= object.wallets.sum(:balance) %></span>
+                <span class="small"><%= t ".balance_total" %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t "close" %></button>
+      </div>
+    </div>
+  </div>
+</div>

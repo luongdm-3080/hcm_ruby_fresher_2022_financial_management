@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :transactions, only: %i(create destroy update)
     namespace :admin do
       root "users#index"
-      resources :users, only: %i(index show)
+      resources :users, only: :index
     end
   end
 end

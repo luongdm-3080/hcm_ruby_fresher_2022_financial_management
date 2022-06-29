@@ -10,5 +10,6 @@ pagy_page:
 image:
   image_1: https://static.moneylover.me/img/icon/ic_category_transport.png
   image_2: https://static.moneylover.me/img/icon/icon.png
+  image_3: https://s3-us-west-2.amazonaws.com/s.cdpn.io/1435559/sloth.jpg
 time: '%FT%R'
 latest: 5
