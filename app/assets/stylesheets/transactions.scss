@@ -1,12 +1,14 @@
+@import 'color';
+@import 'size';
 .transaction-content-box {
-  background-color: #f4f4f4;
+  background-color: $colorLight;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   width: 50%;
 }
 .transaction-content-box #transaction-content-dialog {
   padding-right: 0!important;
-  background: #f4f4f4;
+  background: $colorLight;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
@@ -358,7 +360,7 @@ div.transaction-div-4 {
   overflow: hidden;
 }
 .form-select {
-  width: 50%;
+  width: 30%;
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -555,4 +557,40 @@ button.button-500 div {
 }
 .button-col span {
   font-weight: bolder
+}
+.field-left {
+  margin-left: 40px;
+  width: 200px;
+  float: left;
+  text-align: center;
+}
+.field-right{
+  margin-left: 100px;
+  width: 200px;
+  float: left;
+  text-align: center;
+}
+.search {
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  background-color: $light-darker;
+  color: $gray-lighter;
+  margin-right: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.add-transaction {
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  background-color: $green-light;
+  color: $gray-lighter;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
