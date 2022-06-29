@@ -41,6 +41,9 @@ vi:
       submit: "Tạo tài khoản"
       question: "Đã có tài khoản？"
       login: "Đăng nhập"
+    create:
+      failure_message: "Đăng ký nguời dùng thất bại"
+      mail_activation_message: "Hãy kiểm tra email của bạn để kích hoạt tài khoản của bạn."
   shared:
     error_messages:
       prefix: "Bạn có %{err_count} "
@@ -78,6 +81,7 @@ vi:
     create:
       success_message: "Chào mừng đến với  website quản lý tài chính!"
       failure_message: "Đăng ký nguời dùng thất bại"
+      unactivated_message: "Hãy kiểm tra email của bạn để kích hoạt tài khoản của bạn."
   success_message: "Chào mừng đến với website quản lý tài chính!"
   failure_message: "Đăng ký nguời dùng thất bại"
   name_label: "Tên ví"
@@ -214,3 +218,15 @@ vi:
         user: Tổng số người dùng
         unauthorization: "Bạn không thể truy cập"
   show: Cho xem
+  show: Cho xem
+  account_activations:
+      edit:
+        success_message: "Tài khoản đã được kích hoạt!"
+        failure_message: "Liên kết kích hoạt không hợp lệ"
+
+  user_mailer:
+    account_activation:
+      subject: "Kích hoạt tài khoản"
+      greeting: "Xin chào"
+      body: "Chào mừng bạn đến với quanr ly tai chinh! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
+      activate_link: "Hoạt động"

@@ -21,5 +21,6 @@ Rails.application.routes.draw do
       root "users#index"
       resources :users, only: :index
     end
+    resources :account_activations, only: :edit
   end
 end

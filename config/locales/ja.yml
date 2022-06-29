@@ -41,6 +41,9 @@ ja:
       submit: "アカウントを作る"
       question: "ユーザー？"
       login: "ログイン"
+    create:
+      failure_message: "サインアップに失敗しました！"
+      mail_activation_message: "メールをチェックしてアカウントを有効にしてください."
   shared:
     error_messages:
       prefix: "フォームには %{err_count} が含まれています"
@@ -78,6 +81,7 @@ ja:
     create:
         success_message: "個人財務管理へようこそ!"
         failure_message: "サインアップに失敗しました！"
+        unactivated_message: "メールをチェックしてアカウントを有効にしてください."
   success_message: "個人財務管理へようこそ!"
   failure_message: "サインアップに失敗しました！"
   name_label: "ネームウォレット"
@@ -211,3 +215,15 @@ ja:
         user: 総ユーザー数
         unauthorization: "このアクションを実行する権限がありません"
   show: 見せる
+  show: 見せる
+  account_activations:
+      edit:
+        success_message: "アカウントが有効になりました！"
+        failure_message: "無効なアクティベーションリンク"
+
+  user_mailer:
+    account_activation:
+      subject: "アカウント開設"
+      greeting: "こんにちは"
+      body: "個人財務管理へようこそ! 以下のリンクをクリックして、アカウントをアクティブ化してください:"
+      activate_link: "活性化"

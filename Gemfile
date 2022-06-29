@@ -33,6 +33,8 @@ gem "pagy"
 
 gem "chartkick"
 gem "groupdate"
+
+gem "figaro"
 # Use Active Storage variant
 # gem "image_processing", "~> 1.2"
 
