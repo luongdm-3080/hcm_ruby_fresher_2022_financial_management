@@ -510,3 +510,201 @@ button.btn.save::before {
     transform: rotate(0deg);
   }
 }
+
+
+/*---------- heading ----------- */
+.masthead {
+    padding: 15em 0;
+    background-image: url("https://i.imgur.com/D4rA84W.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top: 1em solid #ffcf33;
+}
+
+.masthead-heading {
+  font-size: 6em;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 1.5px 3px 0px #edc647;
+  color: #F7E199;
+  margin-top: -0.2em;
+
+}
+.masthead-intro {
+  font-size: 2em;
+  font-family: "Gentium Book Basic", Georgia, serif;
+  text-align: center;
+  color: #e5e5e5;
+  margin-bottom: 0.1em;
+}
+
+/*---------- section ----------- */
+.intro,
+.where-Im-from,
+.more-about-me {
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  text-align: left;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.intro > p,
+.where-Im-from > p,
+.more-about-me > p {
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+section > h1 {
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-bottom: 50px;
+  padding-top: 30px;
+}
+
+.more-about-me > h2 {
+  font-size: 1.2em;
+  font-family: "Gentium Book Basic";
+  font-weight: bold;
+  color: #f7e199;
+}
+
+/*---------- footer ----------- */
+.content-footer {
+  margin-top: 8em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  background-color: #ffcf33;
+}
+
+.content-footer > p {
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-family: "Open Sans"
+}
+
+footer > ul {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+footer ul li {
+  list-style-type: none;
+  display: inline;
+}
+
+.content-footer a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #000;
+}
+
+@media only screen and (max-width:500px){
+  .masthead {
+    padding: 3em 0;
+  }
+  .masthead-heading {
+    font-size: 3em;
+  }
+  .intro,
+  .where-Im-from,
+  .more-about-me,
+  .content-footer {
+    font-size: 0.5em;
+  }
+}
+.page {
+  background: #f1f1f1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+  height: 100vh;
+  position: relative;
+}
+
+.countdown-col {
+  background: url(https://fadzrinmadu.github.io/hosted-assets/responsive-coming-soon-page-with-awesome-newsletter-html-css-and-js/bg.png) no-repeat center;
+  background-size: cover;
+}
+
+.time {
+  color: #fff;
+  text-transform: uppercase;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.time span {
+  padding: 0 14px;
+  font-size: 10px;
+}
+
+.time span div {
+  font-size: 40px;
+}
+
+.newslatter {
+  width: 90%;
+}
+
+.newslatter h4 {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.newslatter input, .newslatter button {
+  display: block;
+  margin: 12px auto;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.newslatter-button {
+  background: linear-gradient(125deg, #3498db, #34495e);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.newslatter-button:hover {
+  opacity: 0.7;
+}
+
+
+@media screen and (max-width: 900px) {
+  .col {
+    flex: 100%;
+  }
+}

@@ -23,8 +23,9 @@ en:
       title: "Home"
     about:
       title: "About"
-      welcome: "About"
       second_intro: "This is the Personal Financial Management application for the tutorial"
+      hello: "Hi, I'm"
+      intro: Introduction
     help:
       title: "Help"
       welcome: "Help"
