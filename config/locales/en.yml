@@ -17,6 +17,7 @@ en:
       menu: Menu
       add_wallet: Add Wallet
       log_out: Logout
+      admin: Admin
   static_pages:
     home:
       title: "Home"
@@ -53,6 +54,11 @@ en:
     modal_create:
       submit: Create
       add_category: Add Category
+    show_user:
+      user_name: "User Name: %{name}"
+      categories_total: Total category
+      wallets_total: Total wallets
+      balance_total: Total balance
   sessions:
     new:
       sign_up: "Sign up"
@@ -181,3 +187,18 @@ en:
   xtitle: Transactions date
   ytitle: Count
   label_transaction: transaction
+  admin:
+    users:
+      index:
+        title: Users
+        welcome: All Users
+        name: Name user
+        email: Email
+        role: Role
+        actived: Actived
+        categories_total: Total category
+        wallets_total: Total wallets
+        balance_total: Total balance
+        user: Total user
+        unauthorization: "You don't have permission to do this action"
+  show: Show

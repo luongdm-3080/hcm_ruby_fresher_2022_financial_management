@@ -15,6 +15,9 @@ class User < ApplicationRecord
   validates :password, presence: true,
             length: {minimum: Settings.digits.length_password_min_6}
 
+  scope :order_by_name, ->{order name: :asc}
+  delegate :total_category, to: :categories
+  delegate :total_wallet, :sum_balance, to: :wallets
   before_save :downcase_email
   has_secure_password
 

@@ -19,7 +19,7 @@
           <%= object.category_type %>
         </div>
 
-        <div class="text">  
+        <div class="text">
           <i class="bi bi-alarm-fill"></i>
           <%= t "create_time", time: time_ago_in_words(object.created_at) %>
           <span class = "update_time">
@@ -31,6 +31,6 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"><%= t "close" %></button>
       </div>
-    </div> 
+    </div>
   </div>
 </div>

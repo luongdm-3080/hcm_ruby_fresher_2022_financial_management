@@ -8,4 +8,13 @@ class Wallet < ApplicationRecord
   validates :balance, presence: true, numericality: {only_integer: true}
 
   scope :newest, ->{order created_at: :desc}
+  class << self
+    def total_wallet
+      Wallet.count
+    end
+
+    def sum_balance
+      Wallet.sum(:balance)
+    end
+  end
 end

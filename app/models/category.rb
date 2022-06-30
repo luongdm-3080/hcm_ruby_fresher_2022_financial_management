@@ -6,4 +6,8 @@ class Category < ApplicationRecord
             length: {maximum: Settings.digits.length_name_max_25}
 
   scope :order_by_name, ->{order name: :asc}
+
+  def self.total_category
+    Category.count
+  end
 end

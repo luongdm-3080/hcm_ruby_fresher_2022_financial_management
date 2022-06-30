@@ -17,6 +17,7 @@ ja:
       help: ヘルプ
       menu: メニュー
       log_out: ログアウト
+      admin: 管理者
   static_pages:
     home:
       title: "ホームページ"
@@ -50,6 +51,11 @@ ja:
       submit: アップデート
     modal_create:
       submit: 作成
+    show_user:
+      user_name: "ユーザーに名前: %{name}"
+      categories_total: 合計カテゴリ
+      wallets_total: トータルウォレット
+      balance_total: 総合収支
     delete: 削除する
 
   activerecord:
@@ -190,3 +196,18 @@ ja:
   xtitle: 取引日
   ytitle: カウント
   label_transaction: トランザクション
+  admin:
+    users:
+      index:
+        title: ユーザー
+        welcome: 全てのユーザー
+        name: ユーザーに名前
+        email: Eメール
+        role: 役割
+        actived: Actived
+        categories_total: 合計カテゴリ
+        wallets_total: トータルウォレット
+        balance_total: 総合収支
+        user: 総ユーザー数
+        unauthorization: "このアクションを実行する権限がありません"
+  show: 見せる

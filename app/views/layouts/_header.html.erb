@@ -26,6 +26,12 @@
 
     <div class="sidebar">
       <ul>
+        <% if is_admin? %>
+          <li>
+            <span class="icon"><i class="fa-solid fa-users"></i></span>
+            <%= link_to t(".admin"), admin_root_path, class: "title" %>
+          </li>
+        <% end %>
         <li>
           <span class="icon"><i class="fas fa-book"></i></span>
           <%= link_to t(".transactions"), path_to_wallets, class: "title" %>
