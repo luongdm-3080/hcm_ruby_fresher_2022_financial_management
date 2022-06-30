@@ -11,9 +11,9 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      log_in @user
-      flash[:success] = t ".success_message"
-      redirect_to home_url
+      @user.send_activation_email
+      flash[:info] = t ".mail_activation_message"
+      redirect_to root_url
     else
       flash.now[:danger] = t ".failure_message"
       render :new
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     return if @user
 
     flash[:danger] = t ".not_found"
-    redirect_to current_user
+    redirect_to root_url
   end
 
   def user_correct

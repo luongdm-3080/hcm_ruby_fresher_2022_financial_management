@@ -43,6 +43,7 @@ en:
     create:
       success_message: "Welcome to the Personal Financial Management!"
       failure_message: "Sign up failed!"
+      mail_activation_message: "Please check your email to activate your account."
   shared:
     error_messages:
       prefix: "The form contains %{err_count} "
@@ -71,8 +72,8 @@ en:
       password_label: "Password"
       remember_me: "Remember me on this computer"
     create:
-      success_message: "Welcome to the Personal Financial Management!"
-      failure_message: "Sign up failed!"
+      failure_message: "Invalid email/password combination"
+      unactivated_message: "Account not activated. Check your email for the activation link."
   success_message: "Welcome to the Personal Financial Management!"
   failure_message: "Sign up failed!"
   name_label: "Name Wallet"
@@ -202,3 +203,14 @@ en:
         user: Total user
         unauthorization: "You don't have permission to do this action"
   show: Show
+  show: Show
+  account_activations:
+    edit:
+      success_message: "Account activated!"
+      failure_message: "Invalid activation link"
+  user_mailer:
+    account_activation:
+      subject: "Account activation"
+      greeting: "Hi"
+      body: "Welcome to Personal Financial Management! Click on the link below to activate your account:"
+      activate_link: "Activate"
