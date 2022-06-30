@@ -48,6 +48,8 @@ group :development, :test do
   gem "faker", "2.1.2"
   gem "database_cleaner", "~> 1.5"
   gem "shoulda-matchers", "~> 5.0"
+  gem "rails-controller-testing"
+  gem "capybara", ">= 2.15"
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
