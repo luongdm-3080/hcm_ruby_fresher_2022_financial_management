@@ -218,7 +218,6 @@ vi:
         user: Tổng số người dùng
         unauthorization: "Bạn không thể truy cập"
   show: Cho xem
-  show: Cho xem
   account_activations:
       edit:
         success_message: "Tài khoản đã được kích hoạt!"

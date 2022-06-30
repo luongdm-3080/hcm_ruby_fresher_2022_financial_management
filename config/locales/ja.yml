@@ -215,7 +215,6 @@ ja:
         user: 総ユーザー数
         unauthorization: "このアクションを実行する権限がありません"
   show: 見せる
-  show: 見せる
   account_activations:
       edit:
         success_message: "アカウントが有効になりました！"

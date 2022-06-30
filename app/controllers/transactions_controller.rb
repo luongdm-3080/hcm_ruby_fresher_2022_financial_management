@@ -12,12 +12,10 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new transaction_params
-    if create_update_balance @transaction
-      flash[:success] = t ".success"
-      redirect_to wallet_transactions_path(@transaction.wallet_id)
-    else
-      respond_to :js
-    end
+    return unless create_update_balance @transaction
+
+    flash[:success] = t ".success"
+    redirect_to wallet_transactions_path(@transaction.wallet_id)
   end
 
   def show; end
@@ -109,6 +107,6 @@ class TransactionsController < ApplicationController
       end
     end
   rescue StandardError
-    errors.add(:base, I18n.t(".failed_update"))
+    respond_to :js
   end
 end

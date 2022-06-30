@@ -9,12 +9,13 @@ class Transaction < ApplicationRecord
 
   delegate :name, :category_type, to: :category
   scope :transactions_today, (lambda do |wallet_id, start_day, end_day|
-    where wallet_id: wallet_id, transaction_date: start_day..end_day
+    where(wallet_id: wallet_id, transaction_date: start_day..end_day)
   end)
   scope :category_type_transaction, (lambda do |category_type|
     Transaction.joins(:category)
     .where categories: {category_type: category_type}
   end)
   scope :latest, ->{order(transaction_date: :desc).limit Settings.latest}
+  scope :soon, ->{order(transaction_date: :desc)}
   scope :category_transaction, ->{Transaction.joins(:category)}
 end

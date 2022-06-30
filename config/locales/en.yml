@@ -203,7 +203,6 @@ en:
         user: Total user
         unauthorization: "You don't have permission to do this action"
   show: Show
-  show: Show
   account_activations:
     edit:
       success_message: "Account activated!"

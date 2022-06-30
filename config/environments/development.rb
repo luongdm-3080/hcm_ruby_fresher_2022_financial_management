@@ -68,7 +68,7 @@ Rails.application.configure do
       host: host,
       protocol: "http"
     }
-  
+
     ActionMailer::Base.smtp_settings = {
       address: ENV["mail_address"],
       port: 587,
