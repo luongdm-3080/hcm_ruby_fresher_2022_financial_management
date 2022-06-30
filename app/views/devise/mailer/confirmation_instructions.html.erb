@@ -1,0 +1,5 @@
+<p><%= t ".title" %> <%= @email %>!</p>
+
+<p><%= t ".welcome" %></p>
+
+<p><%= link_to 'Confirm my account', user_confirmation_url(confirmation_token: @token) %></p>

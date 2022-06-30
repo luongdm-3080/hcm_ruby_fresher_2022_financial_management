@@ -68,20 +68,6 @@ ja:
         email: "メール"
         password: "パスワード"
         password_confirmation: "パスワードの確認"
-  sessions:
-    new:
-      sign_up: "サインアップ"
-      title: "ログイン"
-      welcome: "ログイン"
-      submit: "ログイン"
-      email_label: "メール"
-      new_question: "新しいユーザー？"
-      password_label: "パスワード"
-      remember_me: "このコンピューターで私を覚えておいてください"
-    create:
-        success_message: "個人財務管理へようこそ!"
-        failure_message: "サインアップに失敗しました！"
-        unactivated_message: "メールをチェックしてアカウントを有効にしてください."
   success_message: "個人財務管理へようこそ!"
   failure_message: "サインアップに失敗しました！"
   name_label: "ネームウォレット"
@@ -215,41 +201,3 @@ ja:
         user: 総ユーザー数
         unauthorization: "このアクションを実行する権限がありません"
   show: 見せる
-  show: 見せる
-  account_activations:
-      edit:
-        success_message: "アカウントが有効になりました！"
-        failure_message: "無効なアクティベーションリンク"
-
-  user_mailer:
-    account_activation:
-      subject: "アカウント開設"
-      greeting: "こんにちは"
-      body: "個人財務管理へようこそ! 以下のリンクをクリックして、アカウントをアクティブ化してください:"
-      activate_link: "活性化"
-    password_reset:
-      subject: "パスワードのリセット"
-      first_sentence: "パスワードをリセットするには、以下のリンクをクリックしてください:"
-      reset_link: "パスワードのリセット"
-      second_sentence: "このリンクはで期限切れになります %{time} "
-      hour: "時間"
-      third_sentence: "パスワードのリセットをリクエストしなかった場合は、このメールを無視してください。パスワードはそのまま残ります。."
-
-  password_resets:
-    new:
-      title: "パスワードをお忘れですか"
-      welcome: "パスワードをお忘れですか"
-      submit: "送信"
-    create:
-      success_message: "パスワードのリセット手順が記載されたメール"
-      failure_message: "メールアドレスが見つかりません"
-    edit:
-      title: "パスワードのリセット"
-      welcome: "パスワードのリセット"
-      submit: "パスワードを更新する"
-    update:
-      empty_password: "空にすることはできません"
-      successful_reset: "パスワードがリセットされました."
-      something_wrong: "何かがうまくいかなかった。 もう一度やり直してください"
-    expired_reset: "パスワードのリセットの有効期限が切れました"
-    invalid_link: "無効なリンク"

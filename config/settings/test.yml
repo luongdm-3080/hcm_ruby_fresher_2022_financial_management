@@ -6,3 +6,8 @@ digits:
   expired_reset_password_time: 1
 regex:
   email: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/'
+pagy_page:
+  default_page: 5
+time: "%FT%R"
+latest: 5
+time_date: "%A, %B %Y"

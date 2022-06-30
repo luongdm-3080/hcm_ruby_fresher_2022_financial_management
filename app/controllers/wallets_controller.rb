@@ -1,5 +1,5 @@
 class WalletsController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :load_wallet, :user_correct_wallet, except: %i(create index new)
 
   def index

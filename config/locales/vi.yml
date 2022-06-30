@@ -68,20 +68,6 @@ vi:
         email: "Địa chỉ Email"
         password: "Mật khẩu"
         password_confirmation: "Mật khẩu xác nhận"
-  sessions:
-    new:
-      sign_up: "Đăng ký"
-      title: "Đăng nhập"
-      welcome: "Đăng nhập"
-      submit: "Đăng nhập"
-      email_label: "Email"
-      new_question: "Người dùng mới?"
-      password_label: "Mật khẩu"
-      remember_me: "Hãy ghi nhớ tôi với"
-    create:
-      success_message: "Chào mừng đến với  website quản lý tài chính!"
-      failure_message: "Đăng ký nguời dùng thất bại"
-      unactivated_message: "Hãy kiểm tra email của bạn để kích hoạt tài khoản của bạn."
   success_message: "Chào mừng đến với website quản lý tài chính!"
   failure_message: "Đăng ký nguời dùng thất bại"
   name_label: "Tên ví"
@@ -218,41 +204,3 @@ vi:
         user: Tổng số người dùng
         unauthorization: "Bạn không thể truy cập"
   show: Cho xem
-  show: Cho xem
-  account_activations:
-      edit:
-        success_message: "Tài khoản đã được kích hoạt!"
-        failure_message: "Liên kết kích hoạt không hợp lệ"
-
-  user_mailer:
-    account_activation:
-      subject: "Kích hoạt tài khoản"
-      greeting: "Xin chào"
-      body: "Chào mừng bạn đến với quanr ly tai chinh! Nhấp vào liên kết bên dưới để kích hoạt tài khoản của bạn:"
-      activate_link: "Hoạt động"
-    password_reset:
-      subject: "Đặt lại mật khẩu"
-      first_sentence: "Để đặt lại mật khẩu của bạn, hãy nhấp vào liên kết bên dưới:"
-      reset_link: "Đặt lại mật khẩu"
-      second_sentence: "Liên kết này sẽ hết hạn sau %{time} "
-      hour: "h"
-      third_sentence: "Nếu bạn không yêu cầu đặt lại mật khẩu của mình, vui lòng bỏ qua email này và mật khẩu của bạn sẽ vẫn như cũ."
-
-  password_resets:
-    new:
-      title: "Quên mật khẩu"
-      welcome: "Quên mật khẩu"
-      submit: "Chấp nhận"
-    create:
-      success_message: "Email được gửi kèm theo hướng dẫn đặt lại mật khẩu"
-      failure_message: "Không tìm thấy địa chỉ email"
-    edit:
-      title: "Đặt lại mật khẩu"
-      welcome: "Đặt lại mật khẩu"
-      submit: "Cập nhật mật khẩu"
-    update:
-      empty_password: "không thể để trống"
-      successful_reset: "Mật khẩu đã được đặt lại."
-      something_wrong: "Đã xảy ra lỗi. Vui lòng thử lại"
-    expired_reset: "Đặt lại mật khẩu đã hết hạn"
-    invalid_link: "Liên kết không hợp lệ"

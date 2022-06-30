@@ -60,20 +60,6 @@ en:
       categories_total: Total category
       wallets_total: Total wallets
       balance_total: Total balance
-  sessions:
-    new:
-      sign_up: "Sign up"
-      title: "Log in"
-      welcome: "Log in"
-      submit: "Log in"
-      email_label: "Email"
-      new_question: "New user?"
-      question: "User?"
-      password_label: "Password"
-      remember_me: "Remember me on this computer"
-    create:
-      failure_message: "Invalid email/password combination"
-      unactivated_message: "Account not activated. Check your email for the activation link."
   success_message: "Welcome to the Personal Financial Management!"
   failure_message: "Sign up failed!"
   name_label: "Name Wallet"
@@ -203,43 +189,6 @@ en:
         user: Total user
         unauthorization: "You don't have permission to do this action"
   show: Show
-  show: Show
-  account_activations:
-    edit:
-      success_message: "Account activated!"
-      failure_message: "Invalid activation link"
-  user_mailer:
-    account_activation:
-      subject: "Account activation"
-      greeting: "Hi"
-      body: "Welcome to Personal Financial Management! Click on the link below to activate your account:"
-      activate_link: "Activate"
-    password_reset:
-      subject: "Password reset"
-      first_sentence: "To reset your password click the link below:"
-      reset_link: "Reset password"
-      second_sentence: "This link will expire in %{time} "
-      hour: "hour"
-      third_sentence: "If you did not request your password to be reset, please ignore this email andyour password will stay as it is."
-
-  password_resets:
-    new:
-      title: "Forgot password"
-      welcome: "Forgot password"
-      submit: "Submit"
-    create:
-      success_message: "Email sent with password reset instructions"
-      failure_message: "Email address not found"
-    edit:
-      title: "Reset password"
-      welcome: "Reset password"
-      submit: "Update password"
-    update:
-      empty_password: "can't be empty"
-      successful_reset: "Password has been reset."
-      something_wrong: "Something went wrong. Please try again"
-    expired_reset: "Password reset has expired"
-    invalid_link: "Invalid_link"
   success_wallet: "Create wallet success"
   danger_wallet: "Create wallet fail"
   update_success_wallet: "Update success"
