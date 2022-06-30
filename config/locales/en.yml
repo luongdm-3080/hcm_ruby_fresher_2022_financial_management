@@ -155,6 +155,17 @@ en:
     update:
       edit_failure_message: "Update failed"
       edit_success_message: "Update success"
+    destroy:
+      success_message: Delete success
+      failure_message: Delete fail
+    chart_analysis:
+      total_transaction_day: Total transaction days
+      total_category_type: Total category type
+      select: Wallet name
+      search: Search
+      total_category_name: Total category name
+      no_transaction: No transaction
+      unauthorization: "You don't have permission to do this action"
   count_transaction: "%{count} Transactions"
   inflow_name: "Inflow"
   outflow_name: "Outflow"
@@ -167,3 +178,6 @@ en:
   header_search: Search transaction
   start_label: Start day
   end_label: End day
+  xtitle: Transactions date
+  ytitle: Count
+  label_transaction: transaction

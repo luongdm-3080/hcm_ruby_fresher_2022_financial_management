@@ -3,8 +3,7 @@ class TransactionsController < ApplicationController
   before_action :load_transaction, only: %i(update destroy)
   before_action :user_correct_wallet, except: :create
   before_action :load_wallet_transaction, only: :show
-  before_action :time_start_day, :time_end_day, only: :index
-
+  before_action :time_start_day, :time_end_day, only: %i(index chart_analysis)
   def index
     @wallet_id = params[:wallet_id]
     @transaction = Transaction.new
@@ -45,10 +44,19 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def chart_analysis
+    @wallet_id = params[:wallet_id]
+    @date_of_transactions = data_of_transactions
+  end
+
   private
 
   def transaction_params
     params.require(:transaction).permit(Transaction::CREATE_ATTRS)
+  end
+
+  def data_of_transactions
+    Transaction.transactions_today(@wallet_id, @start_day, @end_day)
   end
 
   def load_wallet_transaction

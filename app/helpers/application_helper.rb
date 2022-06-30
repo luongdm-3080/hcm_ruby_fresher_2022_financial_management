@@ -19,4 +19,10 @@ module ApplicationHelper
 
     wallet_transactions_path(load_wallets.first.id)
   end
+
+  def path_to_chart
+    return new_wallet_path if load_wallets.first&.id.nil?
+
+    chart_wallet_transactions_path(load_wallets.first.id)
+  end
 end

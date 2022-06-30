@@ -30,6 +30,9 @@ gem "bcrypt"
 gem "bootstrap-sass", "3.4.1"
 
 gem "pagy"
+
+gem "chartkick"
+gem "groupdate"
 # Use Active Storage variant
 # gem "image_processing", "~> 1.2"
 

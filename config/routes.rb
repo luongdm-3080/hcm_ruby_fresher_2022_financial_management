@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     resources :users
     resources :wallets, except: %i(edit) do
-      resources :transactions, only: %i(index show)
+      resources :transactions, only: %i(index show) do
+        get "/chart", to: "transactions#chart_analysis", on: :collection
+      end
     end
     resources :categories, except: %i(new show edit)
     resources :transactions, only: %i(create destroy update)

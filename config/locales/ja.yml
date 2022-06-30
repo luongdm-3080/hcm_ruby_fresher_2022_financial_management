@@ -164,6 +164,14 @@ ja:
     destroy:
       success_message: 成功が削除されました
       failure_message: 失敗が削除されました
+    chart_analysis:
+      total_transaction_day: 総取引日数
+      total_category_type: 合計カテゴリタイプ
+      select: ウォレット名
+      search_chart: 探す
+      total_category_name: カテゴリ名の合計
+      no_transaction: トランザクションなし
+      unauthorization: "このアクションを実行する権限がありません"
   count_transaction: "%{count} トランザクション "
   inflow_name: "流入"
   outflow_name: "流出"
@@ -179,3 +187,6 @@ ja:
   message_transaction: "トランザクションが削除されました 確かに財布ができます????? "
   edit_transaction: トランザクションが整理
   transactions_wallet: トランザクション
+  xtitle: 取引日
+  ytitle: カウント
+  label_transaction: トランザクション

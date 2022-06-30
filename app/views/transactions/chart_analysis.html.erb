@@ -1,0 +1,36 @@
+<div class= "chart">
+  <div class="button-group">
+    <button type="button" class="search" data-toggle="modal" data-target="#modalSearch">
+    <i class="fas fa-search"></i>
+    <%= t ".search_chart" %>
+    </button>
+    <%= render "shared/form_search", url: chart_wallet_transactions_path(wallet_id: @wallet_id) %>
+    <select onchange="window.location=this.value" class="form-control form-select">
+      <option><%= t ".select" %></option>
+      <% load_wallets.each do |w| %>
+      <option value="<%= chart_wallet_transactions_path(wallet_id: w.id) %>"><%= w.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <% if @date_of_transactions.any? %>
+    <div class= "line-chart">
+      <h3><%= t ".total_transaction_day"%></h3>
+      <%= line_chart @date_of_transactions.group_by_day(:transaction_date).count,
+      xtitle: I18n.t(".xtitle"), ytitle: I18n.t(".ytitle"), label: I18n.t(".label_transaction") %>
+    </div>
+    <hr>
+    <div class= "category-type-chart">
+      <% transaction_by_category = @date_of_transactions.category_transaction.group(:category_type) %>
+      <h3><%= t ".total_category_type" %></h3>
+      <%= pie_chart transaction_by_category.sum(:total), prefix: "$" %>
+    </div>
+    <hr>
+    <div class= "category-type-chart">
+      <h3><%= t ".total_category_name" %></h3>
+      <%= line_chart @date_of_transactions.category_transaction.group(:name).group_by_day(:transaction_date).count,
+      xtitle: I18n.t(".xtitle"), ytitle: I18n.t(".ytitle"), label: I18n.t(".label_transaction") %>
+    </div>
+  <% else %>
+    <h3><%= t ".no_transaction" %></h3>
+  <% end %>
+</div>
