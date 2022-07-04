@@ -42,11 +42,18 @@ gem "figaro"
 gem "bootsnap", ">= 1.4.2", require: false
 
 group :development, :test do
+  gem "dotenv-rails"
   gem "pry", "~> 0.14.0"
+  gem "factory_bot_rails"
+  gem "faker", "2.1.2"
+  gem "database_cleaner", "~> 1.5"
+  gem "shoulda-matchers", "~> 5.0"
   gem "rspec-rails", "~> 4.0.1"
   gem "rubocop", "~> 1.26", require: false
   gem "rubocop-checkstyle_formatter", require: false
   gem "rubocop-rails", "~> 2.14.0", require: false
+  gem "simplecov-rcov"
+  gem "simplecov"
 end
 
 group :development do
