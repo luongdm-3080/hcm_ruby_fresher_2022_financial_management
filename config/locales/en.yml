@@ -196,3 +196,4 @@ en:
   delete_success_wallet: "Wallet deleted"
   delete_failed_wallet: "Wallet delete failed"
   not_found: "Wallet not found"
+  authorzie_warning: "You are not authorized to this page"

@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_category, only: %i(update destroy)
+  authorize_resource
   Pagy::DEFAULT[:items] = Settings.pagy_page.default_page
 
   def index

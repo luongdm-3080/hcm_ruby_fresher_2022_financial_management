@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
+  rescue_from CanCan::AccessDenied, with: :access_denied
 
   protected
 
@@ -24,10 +25,8 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
-  def user_corrects user_id, url
-    return if current_user? user_id
-
-    flash[:danger] = t ".unauthorization"
-    redirect_to url
+  def access_denied
+    flash[:danger] = t "authorzie_warning"
+    redirect_to root_path
   end
 end

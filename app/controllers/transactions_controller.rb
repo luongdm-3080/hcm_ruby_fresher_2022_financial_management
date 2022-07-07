@@ -1,9 +1,11 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
   before_action :load_transaction, only: %i(update destroy)
-  before_action :user_correct_wallet, except: :create
-  before_action :load_wallet_transaction, only: :show
+  before_action :user_correct_wallet, only: %i(index chart_analysis)
+  before_action :load_transaction_of_wallet, only: :show
   before_action :time_start_day, :time_end_day, only: %i(index chart_analysis)
+  authorize_resource
+
   def index
     @wallet_id = params[:wallet_id]
     @transaction = Transaction.new
@@ -59,9 +61,9 @@ class TransactionsController < ApplicationController
     Transaction.transactions_today(@wallet_id, @start_day, @end_day)
   end
 
-  def load_wallet_transaction
+  def load_transaction_of_wallet
     @transaction = Transaction.find_by id: params[:id]
-    return if @transaction&.wallet_id == @wallet.id
+    return if @transaction&.wallet_id == params[:wallet_id].to_i
 
     flash[:danger] = t "not_found"
     redirect_to new_wallet_path
@@ -80,7 +82,10 @@ class TransactionsController < ApplicationController
     @wallet = Wallet.find_by id: params[:wallet_id] || @wallet_id
     return redirect_to new_wallet_path if @wallet.nil?
 
-    user_corrects @wallet.user_id, new_wallet_path
+    return if current_user? @wallet.user_id
+
+    flash[:danger] = t ".unauthorization"
+    redirect_to new_wallet_path
   end
 
   def time_start_day

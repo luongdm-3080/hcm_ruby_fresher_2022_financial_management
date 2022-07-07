@@ -1,6 +1,7 @@
 class WalletsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_wallet, :user_correct_wallet, except: %i(create index new)
+  before_action :load_wallet, except: %i(create index new)
+  authorize_resource
 
   def index
     @wallets = current_user.wallets.newest
@@ -61,9 +62,5 @@ class WalletsController < ApplicationController
 
     flash[:danger] = t ".not_found"
     redirect_to wallets_path
-  end
-
-  def user_correct_wallet
-    user_corrects @wallet.user_id, wallets_path
   end
 end

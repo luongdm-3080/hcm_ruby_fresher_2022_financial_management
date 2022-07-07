@@ -37,6 +37,9 @@ gem "groupdate"
 gem "figaro"
 
 gem "devise"
+
+gem "cancancan"
+
 # Use Active Storage variant
 # gem "image_processing", "~> 1.2"
 
