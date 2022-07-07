@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+  belongs_to :user
   has_many :transactions, dependent: :destroy
   enum category_type: {income: 0, expense: 1}
   CATEGORY_CREATE_ATTRS = %i(name category_type).freeze
