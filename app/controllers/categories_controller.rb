@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :load_category, only: %i(update destroy)
   Pagy::DEFAULT[:items] = Settings.pagy_page.default_page
 

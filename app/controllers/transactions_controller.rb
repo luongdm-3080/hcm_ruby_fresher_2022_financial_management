@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-  before_action :logged_in_user
+  before_action :authenticate_user!
   before_action :load_transaction, only: %i(update destroy)
   before_action :user_correct_wallet, except: :create
   before_action :load_wallet_transaction, only: :show

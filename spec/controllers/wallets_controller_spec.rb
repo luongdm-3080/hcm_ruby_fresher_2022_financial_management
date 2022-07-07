@@ -12,7 +12,7 @@ RSpec.describe WalletsController, type: :controller do
 
     context "when user logged" do
       before do
-        log_in user
+        sign_in user
         get :index
         @ids = [wallet_3.id, wallet_2.id, wallet_1.id]
       end
@@ -49,7 +49,7 @@ RSpec.describe WalletsController, type: :controller do
     end
     context "when user logged" do
       before do
-        log_in user
+        sign_in user
         get :new
       end
       it "should be success" do
@@ -68,13 +68,13 @@ RSpec.describe WalletsController, type: :controller do
     end
     context "when user logged" do
       before do
-        log_in user
+        sign_in user
         post :create, params: {
           wallet: { name: "test", balance: 5678 } }
       end
 
       it "build wallet success" do
-        expect(assigns(:wallet)).to eq(current_user.wallets.last)
+        expect(assigns(:wallet)).to eq(user.wallets.last)
       end
 
       context "wallet save success" do
@@ -89,7 +89,7 @@ RSpec.describe WalletsController, type: :controller do
 
       context "wallet save failed" do
         before do
-          log_in user
+          sign_in user
           post :create, params: { wallet: { balance: 5678 } }
         end
         it "show flash danger" do
@@ -112,7 +112,7 @@ RSpec.describe WalletsController, type: :controller do
     let!(:transaction_1){FactoryBot.create :transaction, category_id: category.id, wallet_id: wallet_1.id}
     let!(:transaction_2){FactoryBot.create :transaction, category_id: category.id, wallet_id: wallet_1.id, transaction_date: (Time.zone.now + 12)}
     context "when user logged" do
-      before { log_in user }
+      before { sign_in user }
       context "when found" do
         it "show transactions latest" do
           get :show, params: {id: wallet_1.id}
@@ -131,13 +131,13 @@ RSpec.describe WalletsController, type: :controller do
   end
 
   describe "PATCH update/:id" do
-    it_behaves_like "not logged for other method" do
+    it_behaves_like "not logged for methods" do
       before do
         patch :update, params: { id: wallet_1.id, wallet: { name: "xyz", balance: 20 } }, xhr: true
       end
     end
     context "when user logged" do
-      before { log_in user }
+      before { sign_in user }
       it "update success" do
         patch :update, params: { id: wallet_1.id, wallet: { name: "xyz", balance: 20 } }, xhr: true
         expect(flash.now[:success]).to eq I18n.t("update_success_wallet")
@@ -150,8 +150,14 @@ RSpec.describe WalletsController, type: :controller do
   end
 
   describe "DELETE destroy" do
-    before {log_in user}
+    it_behaves_like "not logged for methods" do
+      before do
+        patch :destroy, params: { id: wallet_1.id}, xhr: true
+      end
+    end
+
     context "when user logged" do
+      before {sign_in user}
       it "delete success" do
         patch :destroy, params: { id: wallet_1.id}, xhr: true
         expect(flash.now[:success]).to eq I18n.t("delete_success_wallet")
@@ -159,7 +165,7 @@ RSpec.describe WalletsController, type: :controller do
       it "delete failed" do
         allow_any_instance_of(Wallet).to receive(:destroy).and_return false
         patch :destroy, params: { id: wallet_1.id}, xhr: true
-        expect(flash.now[:danger]).to eq I18n.t("delete_failed_wallet")
+        expect(flash.now[:danger]).to eq "Wallet delete failed"
       end
 
       context "when load failed" do

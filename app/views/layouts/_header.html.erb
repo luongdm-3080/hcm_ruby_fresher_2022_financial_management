@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if user_signed_in? %>
   <div class="wrapper">
     <div class="top_navbar">
       <div class="hamburger">
@@ -17,7 +17,7 @@
           <li>
             <button type="button" class="btn btn-default btn-sm">
               <span class="glyphicon glyphicon-log-out" ></span>
-              <%= link_to t(".log_out"), logout_path, method: :delete %>
+              <%= link_to t(".log_out"),  destroy_user_session_path, method: :delete %>
             </button>
           </li>
         </ul>

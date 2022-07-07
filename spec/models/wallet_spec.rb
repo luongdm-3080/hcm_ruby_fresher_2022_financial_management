@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Wallet, type: :model do
   let(:user) {FactoryBot.create :user}
-  let!(:wallet_1) {FactoryBot.create :wallet, user_id: user.id, balance: 3}
-  let!(:wallet_2) {FactoryBot.create :wallet, created_at: (Time.zone.now + 12), user_id: user.id, balance: 3}
-  let!(:wallet_3) {FactoryBot.create :wallet, created_at: (Time.zone.now + 55), user_id: user.id, balance: 3}
+  let!(:wallet_1) {FactoryBot.create :wallet, user_id: user.id, balance: 3, id: 1}
+  let!(:wallet_2) {FactoryBot.create :wallet, created_at: (Time.zone.now + 12), user_id: user.id, balance: 3, id: 2}
+  let!(:wallet_3) {FactoryBot.create :wallet, created_at: (Time.zone.now + 55), user_id: user.id, balance: 3, id: 3}
 
   describe "Associations" do
     it {is_expected.to belong_to(:user)}
