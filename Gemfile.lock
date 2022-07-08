@@ -69,6 +69,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
     builder (3.2.4)
+    cancancan (3.4.0)
     capybara (3.37.1)
       addressable
       matrix
@@ -348,12 +349,13 @@ DEPENDENCIES
   bcrypt
   bootsnap (>= 1.4.2)
   bootstrap-sass (= 3.4.1)
+  cancancan
   capybara (>= 2.15)
   chartkick
   config
   database_cleaner (~> 1.5)
-  dotenv-rails
   devise
+  dotenv-rails
   factory_bot_rails
   faker (= 2.1.2)
   figaro

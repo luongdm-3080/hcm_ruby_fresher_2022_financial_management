@@ -204,3 +204,4 @@ vi:
         user: Tổng số người dùng
         unauthorization: "Bạn không thể truy cập"
   show: Cho xem
+  authorzie_warning: "Bạn không thể truy cập"

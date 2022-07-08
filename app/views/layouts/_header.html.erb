@@ -26,7 +26,7 @@
 
     <div class="sidebar">
       <ul>
-        <% if is_admin? %>
+        <% if current_user.admin? %>
           <li>
             <span class="icon"><i class="fa-solid fa-users"></i></span>
             <%= link_to t(".admin"), admin_root_path, class: "title" %>
