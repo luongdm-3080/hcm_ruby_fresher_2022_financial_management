@@ -14,10 +14,14 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    return unless create_update_balance
-
-    flash[:success] = t ".success"
-    redirect_to wallet_transactions_path(@transaction.wallet_id)
+    if create_update_balance
+      flash[:success] = t ".success"
+      redirect_to wallet_transactions_path(@transaction.wallet_id)
+    else
+      respond_to do |format|
+        format.js{flash.now[:danger] = t ".failure_message"}
+      end
+    end
   end
 
   def show; end
@@ -31,12 +35,10 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
-    if delete_transaction
-      flash[:success] = t ".success_message"
-      redirect_to path_to_wallets
-    else
-      redirect_to @transaction
-    end
+    return unless delete_transaction
+
+    flash[:success] = t ".success_message"
+    redirect_to path_to_wallets
   end
 
   def chart_analysis
@@ -124,7 +126,9 @@ class TransactionsController < ApplicationController
       update_wallet_transaction_new
     end
   rescue StandardError
-    format.js{flash.now[:danger] = t ".edit_failure_message"}
+    respond_to do |format|
+      format.js{flash.now[:danger] = t ".edit_failure_message"}
+    end
   end
 
   def delete_transaction
@@ -134,6 +138,8 @@ class TransactionsController < ApplicationController
     end
   rescue StandardError
     flash[:danger] = t ".failure_message"
+    redirect_to wallet_transaction_path(wallet_id: @wallet_id,
+                                        id: @transaction.id) and return
   end
 
   def update_wallet_transaction_old
@@ -145,7 +151,7 @@ class TransactionsController < ApplicationController
   end
 
   def update_wallet_transaction_new
-    wallet = @transaction.wallet
+    wallet = Wallet.find_by id: @transaction.wallet_id
     category = @transaction.category
     if category.income?
       wallet.update! balance: wallet.balance + @transaction.total

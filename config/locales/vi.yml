@@ -163,6 +163,7 @@ vi:
       select: Lựa chọn ví
     create:
       success: Tạo giao dịch thành công
+      failure_message: "Tạo giao dịch thất bại "
     update:
       edit_failure_message: "Cập nhật thất bại"
       edit_success_message: "Cập nhật giao dịch thành công"
