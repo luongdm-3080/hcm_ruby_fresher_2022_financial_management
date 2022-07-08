@@ -4,18 +4,22 @@
       <div class="inflow">
         <% income_total = category_type_of_transactions("income").sum(:total) %>
         <% expense_total = category_type_of_transactions("expense").sum(:total) %>
-        <span class="amount income tienvao">+€ <%= income_total %></span>
+        <span class="amount income tienvao">+ <%= number_to_currency(income_total, :locale => :en) %></span>
         <div ><%= t "inflow_name" %></div>
       </div>
     </div>
     <div >
       <div class="outflow">
-        <span class="amount expense tienra">-€ <%= expense_total %></span>
+        <span class="amount expense tienra">- <%= number_to_currency(expense_total, :locale => :en) %></span>
         <div ><%= t "outflow_name" %></div>
       </div>
     </div>
     <div >
-      <div class="total-amount"><span  class="amount">€ <%= total_damage(income_total, expense_total) %></span></div>
+      <div class="total-amount">
+        <span class="amount">
+          <%= number_to_currency(total_damage(income_total, expense_total), :locale => :en)%>
+        </span>
+      </div>
     </div>
     <div tabindex="-1" class="view-report screen_13"></div>
   </div>

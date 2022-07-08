@@ -3,7 +3,9 @@
   <span class = "wallet_name"><%= t "wallet_name", name: wallet.name %></span>
 
   <i class="bi bi-piggy-bank"></i>
-  <span class = "wallet_balance"><%= t "wallet_balance", balance: wallet.balance %></span>
+  <span class = "wallet_balance">
+    <%= t "wallet_balance", balance:  number_to_currency(wallet.balance, :locale => :en) %>
+  </span>
 
   <i class="bi bi-alarm-fill"></i>
   <span class="timestamp">

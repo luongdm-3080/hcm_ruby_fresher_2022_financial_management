@@ -15,7 +15,7 @@ class WalletsController < ApplicationController
     @wallet = current_user.wallets.build wallet_params
     if @wallet.save
       flash[:success] = t ".success"
-      redirect_to wallets_path
+      redirect_to root_path
     else
       flash.now[:danger] = t ".failure"
       render :new

@@ -13,9 +13,11 @@
   </div>
 </div>
 <select onchange="window.location=this.value" class="form-control form-select">
-  <option><%= t ".select" %></option>
+  <option><%= @wallet.name %></option>
   <% load_wallets.each do |w| %>
-    <option value="<%= wallet_transactions_path(wallet_id: w.id) %>"><%= w.name %></option>
+    <% unless @wallet == w %>
+      <option value="<%= wallet_transactions_path(wallet_id: w.id) %>"><%= w.name %></option>
+    <% end %>
   <% end %>
 </select>
 <div class = "master-detail-container master-detail-flex">

@@ -25,7 +25,7 @@
       <div><span class="amount-name <%= transaction.category_type %>"><%= transaction.category_type %></span> </div>
     </div>
   </div>
-  <div class="flex offset-xs2">
+  <div class="flex-text offset-xs2">
     <div class="amount-detail ">
       <% if transaction.category_type == "income" %>
         <span class="income">+€ <%= transaction.total %></span>

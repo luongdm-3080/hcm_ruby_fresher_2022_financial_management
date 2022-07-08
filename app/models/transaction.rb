@@ -1,7 +1,8 @@
 class Transaction < ApplicationRecord
   belongs_to :wallet
   belongs_to :category
-  CREATE_ATTRS = %i(total text category_id wallet_id transaction_date).freeze
+  CREATE_ATTRS = %i(total description category_id
+    wallet_id transaction_date).freeze
 
   validates :total, presence: true, numericality: {only_integer: true}
   validates :description, length: {maximum: Settings.digits.length_text_max_20}

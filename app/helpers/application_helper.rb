@@ -7,7 +7,7 @@ module ApplicationHelper
   end
 
   def load_categories
-    current_user.categories
+    current_user.categories.personal.or(Category.available)
   end
 
   def load_wallets
