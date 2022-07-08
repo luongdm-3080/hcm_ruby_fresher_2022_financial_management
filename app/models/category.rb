@@ -11,4 +11,24 @@ class Category < ApplicationRecord
   def self.total_category
     Category.count
   end
+
+  ransacker :sum_money_category do
+    query = "(
+      SELECT SUM(total)
+      FROM transactions
+      WHERE transactions.category_id = categories.id
+      GROUP BY transactions.category_id
+    )"
+    Arel.sql(query)
+  end
+
+  ransacker :count_transaction do
+    query = "(
+      SELECT COUNT(*)
+      FROM transactions
+      WHERE transactions.category_id = categories.id
+      GROUP BY transactions.category_id
+    )"
+    Arel.sql(query)
+  end
 end

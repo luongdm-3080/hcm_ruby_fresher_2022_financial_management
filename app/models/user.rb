@@ -9,6 +9,7 @@ class User < ApplicationRecord
             length: {maximum: Settings.digits.length_name_max_25}
 
   scope :order_by_name, ->{order name: :asc}
+  ransack_alias :user, :name_or_email
   delegate :total_category, to: :categories
   delegate :total_wallet, :sum_balance, to: :wallets
   before_save :downcase_email
@@ -17,5 +18,9 @@ class User < ApplicationRecord
 
   def downcase_email
     email.downcase!
+  end
+
+  ransacker :created_at, type: :date do
+    Arel.sql("date(created_at)")
   end
 end

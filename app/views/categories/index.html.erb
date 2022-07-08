@@ -1,4 +1,5 @@
 <% provide :title, t(".title") %>
+<div><%= render "search" %></div>
 <section class = "category">
   <div class = "header_category">
     <div class="button-col">
@@ -9,25 +10,26 @@
     </div>
     <% if @categories.any? %>
       <div class="status-col">
-        <label><%= t ".category_type" %></label>
+        <label><%= sort_link @search, :category_type, t(".category_type") %></label>
       </div>
       <div class="progress-col">
-        <label><%= t ".create_at" %></label>
+        <label><%= sort_link @search, :created_at, t("create_at") %></label>
       </div>
       <div class="dates-col">
-        <label><%= t ".number_transaction" %></label>
+        <label><%= sort_link @search, :count_transaction, t(".number_transaction") %></label>
+      </div>
+      <div class="dates-col">
+        <label><%= sort_link @search, :sum_money_category, t(".sum_money_category") %></label>
       </div>
       <div class="priority-col">
-        <label><%= t ".status" %></label>
+        <label><%= t ".actions" %></label>
       </div>
     <% end %>
   </div>
 
   <ul class="task-items">
     <% if @categories.any? %>
-      <%= "#{t(".category")} (#{@pagy.count})" %>
-      <%= render @categories %>
-      <%== pagy_bootstrap_nav @pagy %>
+      <%= render "categories" %>
     <% else %>
       <h3><%= t ".no_category" %></h3>
     <% end %>

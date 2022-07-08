@@ -20,7 +20,10 @@
     <td><%= user.total_category %></td>
     <td><%= user.total_wallet %></td>
     <td>
-      <h5 class="m-b-0">$<%= user.sum_balance %></h5>
+      <h5 class="m-b-0"><%= number_to_currency(user.sum_balance, :locale => :en) %></h5>
+    </td>
+    <td>
+      <h5 class="m-b-0"><%= l(user.created_at) %></h5>
     </td>
   </tr>
 </tbody>

@@ -123,6 +123,12 @@ en:
     destroy:
       success_message: Delete success
       failure_message: Delete fail
+    search:
+      total_start: Total start
+      total_end: Total end
+      total_gteq: "0"
+      total_lteq: "1000"
+  category: Category
   category_name: "Category name: %{name}"
   update_time: "Update %{update} ago"
   category_type: Category type
@@ -152,7 +158,7 @@ en:
       success_message: Delete success
       failure_message: Delete fail
     chart_analysis:
-      total_transaction_day: Total transaction days
+      sum_money_category_day: Total transaction days
       total_category_type: Total category type
       select: Wallet name
       search: Search
@@ -176,18 +182,23 @@ en:
   label_transaction: transaction
   admin:
     users:
-      index:
-        title: Users
-        welcome: All Users
-        name: Name user
-        email: Email
-        role: Role
-        actived: Actived
-        categories_total: Total category
-        wallets_total: Total wallets
-        balance_total: Total balance
-        user: Total user
-        unauthorization: "You don't have permission to do this action"
+      users:
+        index:
+          title: Users
+          welcome: All Users
+          name: Name user
+          email: Email
+          role: Role
+          actived: Actived
+          categories_total: Total category
+          wallets_total: Total wallets
+          balance_total: Total balance
+          user: Total user
+          unauthorization: "You don't have permission to do this action"
+      search:
+        created_at: Create at
+        search_name_and_email: Search name or email
+        search_created_date: Search created time
   show: Show
   success_wallet: "Create wallet success"
   danger_wallet: "Create wallet fail"

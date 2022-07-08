@@ -1,0 +1,5 @@
+<div id="category-list">
+  <%= "#{t("category")} (#{@pagy.count})" %>
+  <%= render @categories %>
+  <%== pagy_bootstrap_nav @pagy %>
+</div>

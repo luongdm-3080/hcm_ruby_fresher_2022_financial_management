@@ -35,5 +35,17 @@ RSpec.describe Category, type: :model do
         expect(Category.total_category).to eq 3
       end
     end
+
+    describe "search ransacker" do
+      let(:wallet){FactoryBot.create :wallet, user_id: user.id}
+      let!(:transaction_1){FactoryBot.create :transaction, category_id: category_1.id, wallet_id: wallet.id, total: 11}
+      let!(:transaction_2){FactoryBot.create :transaction, category_id: category_1.id, wallet_id: wallet.id, total: 9}
+      it "gets category sum_money_category" do
+        expect(Category.ransack(sum_money_category_gteq: transaction_1.total).result.pluck(:id)).to eq [category_1.id]
+      end
+      it "gets category count_transaciton" do
+        expect(Category.ransack(count_transaction_gteq: 1).result.pluck(:id)).to eq [category_1.id]
+      end
+    end
   end
 end

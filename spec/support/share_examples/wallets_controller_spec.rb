@@ -30,3 +30,18 @@ RSpec.shared_examples "not logged for methods" do
     end
   end
 end
+
+RSpec.shared_examples "logged static page" do |action|
+  context "when user logged" do
+    before do
+      get action
+    end
+    it "returns a 200 response" do
+      expect(response).to have_http_status "200"
+    end
+
+    it "render home" do
+      expect(response).to render_template action
+    end
+  end
+end

@@ -1,0 +1,25 @@
+<div class="align-center ">
+  <%= search_form_for [:admin, @search], class:"navbar-form flex flex-space-between ", remote: true do |f| %>
+    <div class="flex align-end">
+      <i class="fa-solid fa-filter s-16 m-r-5"></i>
+      <%= sort_link @search, :created_at, t(".created_at") %>
+    </div>
+    <div class="input-group flex align-end">
+      <div class="flex">
+        <div class="flex flex-col align-left">
+          <%= label :name, t(".search_name_and_email") %>
+          <%= f.search_field :user_cont, class:"form-control" %>
+        </div>
+        <div class="flex flex-col align-left m-l-5">
+          <%= label :name, t(".search_created_date") %>
+          <%= f.date_field :created_at_eq, class:"form-control" %>
+        </div>
+      </div>
+      <div class="input-group-btn m-l-5">
+        <%= button_tag(type: :submit, class: "btn btn-default") do %>
+          <i class="glyphicon glyphicon-search"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
