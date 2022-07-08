@@ -71,6 +71,13 @@ vi:
       send_instructions: "Bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản của mình sau vài phút."
       send_paranoid_instructions: "Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được email hướng dẫn cách mở khóa tài khoản sau vài phút."
       unlocked: "Tài khoản của bạn đã được mở khóa thành công. Vui lòng đăng nhập để tiếp tục."
+    shared:
+      links:
+        signin_google: "Đăng nhập bằng Google"
+        confirmation_instructions: "Không nhận được hướng dẫn xác nhận?"
+        forgot: "Quên mật khẩu?"
+        sign_up: "Đăng ký"
+        log_in: "Đăng nhập"
   errors:
     messages:
       already_confirmed: "đã được xác nhận, vui lòng thử đăng nhập"

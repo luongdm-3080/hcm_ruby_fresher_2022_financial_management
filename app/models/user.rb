@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
+         :recoverable, :rememberable, :validatable, :confirmable,
+         :omniauthable, omniauth_providers: [:google_oauth2]
   has_many :wallets, dependent: :destroy
   has_many :categories, dependent: :destroy
   enum role: {user: 0, admin: 1}
@@ -13,6 +14,15 @@ class User < ApplicationRecord
   delegate :total_category, to: :categories
   delegate :total_wallet, :sum_balance, to: :wallets
   before_save :downcase_email
+
+  def self.from_omniauth auth
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.name = auth.info.name
+      user.skip_confirmation!
+    end
+  end
 
   private
 
