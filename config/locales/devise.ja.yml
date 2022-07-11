@@ -71,6 +71,13 @@ ja:
       send_instructions: "数分でアカウントのロックを解除する方法の説明が記載されたメールが届きます."
       send_paranoid_instructions: "アカウントが存在する場合は、数分でロックを解除する方法が記載されたメールが届きます."
       unlocked: "アカウントは正常にロック解除されました。 サインインして続行してください."
+    shared:
+      links:
+        signin_google: "Googleでサインイン"
+        confirmation_instructions: "確認の指示が届きませんでした?"
+        forgot: "パスワードをお忘れですか?"
+        sign_up: "サインアップ"
+        log_in: "ログイン"
   errors:
     messages:
       already_confirmed: "すでに確認済みですので、ログインしてみてください"

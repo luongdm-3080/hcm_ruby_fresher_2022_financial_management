@@ -14,7 +14,7 @@
   </div>
   <% if @date_of_transactions.any? %>
     <div class= "line-chart">
-      <h3><%= t ".total_transaction_day"%></h3>
+      <h3><%= t ".sum_money_category_day"%></h3>
       <%= line_chart @date_of_transactions.group_by_day(:transaction_date).count,
       xtitle: I18n.t(".xtitle"), ytitle: I18n.t(".ytitle"), label: I18n.t(".label_transaction") %>
     </div>
