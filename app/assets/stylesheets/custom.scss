@@ -514,3 +514,66 @@ button.btn.save::before {
     transform: rotate(0deg);
   }
 }
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.flex {
+  display: flex !important ;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-col-rev {
+  flex-direction: column-reverse;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.w-25 {
+  width: 25px;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.m-20 {
+  margin: 20px;
+}
+
+.m-5 {
+  margin: 5px;
+}
+
+.m-b-5 {
+  margin-bottom: 5px;
+}
+
+.m-l-5 {
+  margin-left: 5px;
+}
+
+.m-r-5 {
+  margin-right: 5px;
+}
+
+.s-16 {
+  font-size: 16px;
+}
+.flex #search_created_at_eq {
+  line-height: 19px;
+}

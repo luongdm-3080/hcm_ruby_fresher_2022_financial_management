@@ -132,6 +132,12 @@ vi:
     destroy:
       success_message: Xóa category thành công
       failure_message: Xóa category thất bại
+    search:
+      total_start: Tổng nhỏ
+      total_end: Tổng lớn
+      total_gteq: "0"
+      total_lteq: "1000"
+  category: Category
   category_name: "Tên category là : %{name}"
   update_time: "Cập nhât %{update} trước"
   category_type: Loại category
@@ -164,7 +170,7 @@ vi:
       success_message: Xóa giao dịch thành công
       failure_message: Xóa giao dịch thất bại
     chart_analysis:
-      total_transaction_day: Tổng số giao dịch
+      sum_money_category_day: Tổng số giao dịch
       total_category_type: Tổng số category
       select: Tên ví
       search_chart: Tìm kiếm
@@ -191,7 +197,7 @@ vi:
   label_transaction: giao dịch
   admin:
     users:
-      index:
+      users:
         title: Người dùng
         welcome: Tất cả người sử dụng
         name: Tên người dùng
@@ -202,6 +208,10 @@ vi:
         wallets_total: Tổng số ví
         balance_total: Tổng số dư
         user: Tổng số người dùng
-        unauthorization: "Bạn không thể truy cập"
+        create_at: "Ngày tạo"
+      search:
+        created_at: Ngày tạo
+        search_name_and_email: Tìm theo tên hoặc email
+        search_created_date: Tìm theo ngày
   show: Cho xem
   authorzie_warning: "Bạn không thể truy cập"

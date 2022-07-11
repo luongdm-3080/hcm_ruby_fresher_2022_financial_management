@@ -23,7 +23,14 @@
   <div class="statun">
     <div class="text">
       <i class="fa-solid fa-tent-arrow-left-right"></i>
-      <%= category.id %>
+      <%= category.transactions.count %>
+    </div>
+  </div>
+
+   <div class="statun">
+    <div class="text">
+      <i class="fa-solid fa-tent-arrow-left-right"></i>
+      <%= number_to_currency(category.transactions.sum(:total), :locale => :en) %>
     </div>
   </div>
 

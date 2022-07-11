@@ -2,10 +2,15 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_category, only: %i(update destroy)
   authorize_resource
-  Pagy::DEFAULT[:items] = Settings.pagy_page.default_page
+  Pagy::DEFAULT[:items] = Settings.default_page
 
   def index
-    @pagy, @categories = pagy current_user.categories.order_by_name
+    @search = current_user.categories.order_by_name.ransack(params[:search])
+    @pagy, @categories = pagy @search.result
+    respond_to do |format|
+      format.html
+      format.js
+    end
     store_location
     @category = Category.new
   end
