@@ -214,6 +214,9 @@ ja:
         search_created_date: 作成時間を検索
   show: 見せる
   authorzie_warning: "このアクションを実行する権限がありません"
-  eat_rice: ごはんを食べる
-  my_salary: 私の給料
-  car_fare: 車の運賃
+  current_password: 現在のパスワード
+  delete-account: アカウントを削除する
+  sure_delete: 本気ですか？
+  danger_delete: "本当にこれらのアカウントを削除しますか？このプロセスは元に戻せません。"
+  cancel_account: "アカウントをキャンセルする"
+  cancel: キャンセル

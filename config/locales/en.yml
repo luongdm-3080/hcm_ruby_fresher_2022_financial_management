@@ -209,6 +209,9 @@ en:
   delete_failed_wallet: "Wallet delete failed"
   not_found: "Wallet not found"
   authorzie_warning: "You are not authorized to this page"
-  eat_rice: Eat Rice
-  my_salary: My salary
-  car_fare: Car fare
+  current_password: Current Password
+  delete-account: Delete Account
+  sure_delete: Are you sure?
+  danger_delete: "Do you really want to delete these account? This process cannot be undone."
+  cancel_account: "Cancel my account"
+  cancel: Cancel

@@ -216,6 +216,9 @@ vi:
         search_created_date: Tìm theo ngày
   show: Cho xem
   authorzie_warning: "Bạn không thể truy cập"
-  eat_rice: Tiền ăn
-  my_salary: Tiền lương
-  car_fare: Tiền xe
+  current_password: Mật khẩu hiện tại
+  delete-account: Xóa tài khoản
+  sure_delete: Bạn có chắc không?
+  danger_delete: "Bạn có thực sự muốn xóa những tài khoản này không? Không thể hoàn tác quá trình này."
+  cancel_account: "Hủy tài khoản của tôi"
+  cancel: Hủy bỏ
