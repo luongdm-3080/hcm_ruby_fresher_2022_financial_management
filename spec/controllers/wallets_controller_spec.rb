@@ -83,7 +83,7 @@ RSpec.describe WalletsController, type: :controller do
         end
 
         it "redirect to wallets" do
-          expect(response).to redirect_to wallets_path
+          expect(response).to redirect_to root_path
         end
       end
 

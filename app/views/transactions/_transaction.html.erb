@@ -1,4 +1,4 @@
-<div class="transaction-card">
+<div class="transaction-card" >
   <div>
     <div class="list-transaction" >
       <% if transactions_by_date(category).count > 0 %>
@@ -10,10 +10,11 @@
               <%= image_tag Settings.image.image_2, class: "wallet-icon" %>
               <p class="primary-text"><span  class="transaction-row"><span class="category-name">
                 <span  class=""><%= category.name %></span></span>
+                <% sum_money = transactions_by_date(category).sum(:total)%>
                 <% if category.category_type == "income" %>
-                  <span class="amount mode-view income">+€ <%= transactions_by_date(category).sum(:total) %></span>
+                  <span class="amount mode-view income">+<%= number_to_currency(sum_money, :locale => :en) %></span>
                 <% else %>
-                  <span class="amount mode-view expense">-€ <%= transactions_by_date(category).sum(:total) %></span>
+                  <span class="amount mode-view expense">-<%= number_to_currency(sum_money, :locale => :en) %></span>
                 <% end %>
                 </span>
               </p>
@@ -38,13 +39,13 @@
                        <% if transaction.category_type == "income" %>
                         <div class="amount-view">
                           <span class="amount income">
-                            +€ <%= transaction.total %>
+                            + <%= number_to_currency(transaction.total , :locale => :en) %>
                           </span>
                         </div>
                       <% else %>
                         <div class="amount-view">
                           <span class="amount expense">
-                            -€ <%= transaction.total %>
+                            - <%= number_to_currency(transaction.total , :locale => :en) %>
                           </span>
                         </div>
                       <% end %>

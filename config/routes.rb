@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, skip: %i(registrations sessions confirmations passwords), controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   scope "(:locale)", locale: /en|ja|vi/ do
     devise_for :users, skip: :omniauth_callbacks
-    root "static_pages#home"
+    root "transactions#index"
     get "/help", to: "static_pages#help"
     get "/home", to: "static_pages#home"
     get "/about", to: "static_pages#about"
