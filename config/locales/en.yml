@@ -151,6 +151,7 @@ en:
       unauthorization: "You don't have permission to do this action"
     create:
       success: Create transactions success
+      failure_message: "Create failed"
     update:
       edit_failure_message: "Update failed"
       edit_success_message: "Update success"
