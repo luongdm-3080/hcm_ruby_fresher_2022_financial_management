@@ -84,7 +84,7 @@ en:
       current: "Current Balance"
       my_wallet: "My Wallet"
       wallet_name: "Wallet name: %{name}"
-      wallet_balance: "Balance: $%{balance}"
+      wallet_balance: "Balance: %{balance}"
       create_time: "Create %{time} ago"
       no_transaction : "No transactions"
     update:
@@ -94,8 +94,8 @@ en:
       deleted_message: "Wallet deleted"
       delete_failed_message: "Wallet delete failed"
   create_time: "Create %{time} ago"
-  wallet_name: "Wallet name: %{name} ||"
-  wallet_balance: "Balance: $%{balance} ||"
+  wallet_name: "Wallet name: %{name} "
+  wallet_balance: "Balance: %{balance} "
   header: "Delete Wallet"
   message: "Can sure wallet?????"
   header_edit: "Edit Wallet"
@@ -128,6 +128,8 @@ en:
       total_end: Total end
       total_gteq: "0"
       total_lteq: "1000"
+      search_name: Search name categories
+      name_suggest: My salary
   category: Category
   category_name: "Category name: %{name}"
   update_time: "Update %{update} ago"

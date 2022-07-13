@@ -11,7 +11,7 @@ User.create!(name: "Minh Luong",
   User.create!(name: name, email: email, password: password, password_confirmation: password, confirmed_at: Time.zone.now)
 end
 
-categories = [["Eat rice", 1], ["My salary", 0], ["Car fare", 1]]
+categories = [["Income other", 0], ["Expense other", 1], ["Eat rice", 1], ["My salary", 0], ["Car fare", 1], ["Sell products", 0]]
 categories.each do |key, value|
   Category.create!(name: key, category_type: value, type_name: 1)
 end

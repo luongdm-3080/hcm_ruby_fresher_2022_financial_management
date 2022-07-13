@@ -25,4 +25,12 @@ module ApplicationHelper
 
     chart_wallet_transactions_path(load_wallets.first.id)
   end
+
+  def category_transactions category
+    if category.personal?
+      category.transactions
+    else
+      category.transactions.by_transaction(load_wallets.ids)
+    end
+  end
 end

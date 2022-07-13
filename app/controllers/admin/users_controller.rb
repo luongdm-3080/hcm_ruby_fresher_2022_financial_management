@@ -48,6 +48,8 @@ class Admin::UsersController < Admin::AdminController
     redirect_to admin_root_path
   end
 
+  private
+
   def load_user
     @user = User.with_deleted.find_by id: params[:id]
     return if @user

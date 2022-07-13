@@ -1,9 +1,5 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".welcome" %></h1>
-<%= link_to admin_users_path, class: "btn btn-lg active" do %>
-  <i class="fa-solid fa-angles-left"></i>
-  <%= t ".admin_user" %>
-<% end %>
 <div><%= render "search", url: restores_admin_users_path %></div>
 <div class="page-breadcrumb">
   <div class="row">

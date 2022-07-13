@@ -57,16 +57,23 @@ RSpec.describe Transaction, type: :model do
 
       context "when found" do
         it "transaction by days" do
-          expect(Transaction.latest.transactions_today(wallet.id, @start_time, 
+          expect(Transaction.latest.transactions_today(wallet.id, @start_time,
             @end_time).pluck(:id)).to eq(@ids)
         end
       end
 
       context "when not found" do
         it "should be empty" do
-          expect(Transaction.transactions_today(wallet.id, @start_time - 24.hours, 
+          expect(Transaction.transactions_today(wallet.id, @start_time - 24.hours,
             @end_time - 24.hours).pluck(:id)).to eq []
         end
+      end
+    end
+
+    describe "by_transaction" do
+      
+      it "check scope by_transaction" do
+        expect(Transaction.latest.by_transaction(wallet.id).pluck(:id)).to eq([transaction_2.id, transaction_1.id])
       end
     end
   end

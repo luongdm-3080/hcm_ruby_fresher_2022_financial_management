@@ -125,7 +125,6 @@ ul.task-items {
       margin-left: $standardPadding*1.5;
     }
     .priority {
-      width: $col5Width*0.85;
       .bar {
         background: #ffcdd2;
       }
@@ -141,7 +140,6 @@ ul.task-items {
 }
 
 .add-button {
-  position: absolute;
   right: 100px;
   bottom: -28px;
   width: 56px;

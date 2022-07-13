@@ -23,32 +23,35 @@
   <div class="statun">
     <div class="text">
       <i class="fa-solid fa-tent-arrow-left-right"></i>
-      <%= category.transactions.count %>
+      <%= category_transactions(category).count %>
     </div>
   </div>
 
    <div class="statun">
     <div class="text">
       <i class="fa-solid fa-tent-arrow-left-right"></i>
-      <%= number_to_currency(category.transactions.sum(:total), :locale => :en) %>
+        <%= number_to_currency(category_transactions(category).sum(:total), :locale => :en) %>
     </div>
   </div>
-
-  <div class="priority">
-    <div class = "icon_name">
-      <div class="add-button">
-        <button type="button" class="sub-button tl" data-toggle="modal" data-target="#myModal<%= category.id %>">
-          <%= t "edit" %>
-        </button>
-        <div class="sub-button tr"><%= t "add" %></div>
-        <button type="button" class="sub-button bl" data-toggle="modal" data-target="#myModal_delete<%= category.id %>">
-          <%= t "delete" %>
-        </button>
-        <button type="button" class="sub-button br" data-toggle="modal" data-target="#modal<%= category.id %>">
-          <%= t "view" %>
-        </button>
+  <div class="statun">
+    <% if category.personal? %>
+      <div class="priority">
+        <div class = "icon_name">
+          <div class="add-button">
+            <button type="button" class="sub-button tl" data-toggle="modal" data-target="#myModal<%= category.id %>">
+              <%= t "edit" %>
+            </button>
+            <div class="sub-button tr"><%= t "add" %></div>
+            <button type="button" class="sub-button bl" data-toggle="modal" data-target="#myModal_delete<%= category.id %>">
+              <%= t "delete" %>
+            </button>
+            <button type="button" class="sub-button br" data-toggle="modal" data-target="#modal<%= category.id %>">
+              <%= t "view" %>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
   <%= render "shared/modal_edit", object: category,  render_ui: "categories/form_category", header: t("header_edit_category") %>
   <%= render "shared/modal_delete", object: category, remote: false, header: t("header_category"), message: t("message_category")  %>
