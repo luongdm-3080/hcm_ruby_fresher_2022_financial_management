@@ -1,10 +1,10 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".welcome" %></h1>
-<%= link_to restores_admin_users_path, class: "btn btn-lg active" do %>
-  <i class="fa-solid fa-chevron-right"></i>
-  <%= t ".restores" %>
+<%= link_to admin_users_path, class: "btn btn-lg active" do %>
+  <i class="fa-solid fa-angles-left"></i>
+  <%= t ".admin_user" %>
 <% end %>
-<div><%= render "search", url: admin_users_path %></div>
+<div><%= render "search", url: restores_admin_users_path %></div>
 <div class="page-breadcrumb">
   <div class="row">
     <div class="col-6">

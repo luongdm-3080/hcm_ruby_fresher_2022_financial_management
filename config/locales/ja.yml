@@ -195,6 +195,19 @@ ja:
   label_transaction: トランザクション
   admin:
     users:
+      index:
+        welcome: 全てのユーザー
+        restores: 復元
+        user: ユーザー
+      destroy:
+        destroy_success_message: 成功を破壊する
+        destroy_failure_message: 破壊に失敗しました
+      restore:
+        restore_success_message: 成功を回復する
+        restore_failure_message: 復元に失敗しました
+      really_destroy:
+        really_destroy_success: 本当に成功を破壊する
+        really_destroy_message: 本当に成功に失敗しました
       users:
         title: ユーザー
         welcome: 全てのユーザー
@@ -209,9 +222,20 @@ ja:
         create_at: "作成"
         unauthorization: "このアクションを実行する権限がありません"
       search:
-        created_at: 作成
+        confirmed_at: 作成
         search_name_and_email: 名前またはメールアドレスを検索
         search_created_date: 作成時間を検索
+      user:
+        sure_restore: 確かに復元しますか？
+        destroy: 破壊
+        restore: 戻す
+        sure_delete: "削除しますか？" 
+        really_destroy: 本当に破壊する
+        sure_really_destroy: "あなたは確かに本当に破壊します?"
+      restores: 
+        welcome: ユーザーを復元する
+        admin_user: 管理者ユーザー
+        user: ユーザー
   show: 見せる
   authorzie_warning: "このアクションを実行する権限がありません"
   current_password: 現在のパスワード
