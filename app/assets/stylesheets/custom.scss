@@ -287,9 +287,6 @@ button.btn.save::before {
   font-size: 32px;
   color: #444750;
 }
-.total-balance::before {
-  content: '$';
-}
 .transactions {
   margin-top: 60px;
   border-top: 1px solid $light-555;
@@ -352,20 +349,19 @@ button.btn.save::before {
     padding: 8px;
     text-align: center;
     margin: 0 20px;
-    border: solid;
     option {
       width: 300px;
       min-height: 60px;
       max-height: 300px;
       border-radius: 15px;
-      background-color: rgb(250, 250, 250);
-      box-shadow: 2px 4px 8px #c5c5c5;
+      background-color: $gray-light-c1;
+      box-shadow: 2px 4px 8px $colorLightGrey;
       transition: all 300ms;
-
+      font-style: italic;
       }
     }
     label {
-      color: red;
+      color: $color2;
       display: flex;
     }
 }

@@ -83,7 +83,7 @@ RSpec.describe WalletsController, type: :controller do
         end
 
         it "redirect to wallets" do
-          expect(response).to redirect_to root_path
+          expect(response).to redirect_to wallet_transactions_path(user.wallets.last.id)
         end
       end
 

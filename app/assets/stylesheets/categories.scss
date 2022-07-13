@@ -21,7 +21,7 @@
     text-align: left;
   }
   .status-col {
-    width: $col2Width
+    width: $col3Width
   }
   .progress-col {
     width: $col3Width
@@ -177,7 +177,7 @@ ul.task-items {
   height: 28px;
   line-height:48px;
   font-family: "FontAwesome";
-  font-size: 12px;
+  font-size: 8px;
   -webkit-transition: top .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
     left .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
     bottom .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,

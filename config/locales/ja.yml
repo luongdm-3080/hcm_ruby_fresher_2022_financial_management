@@ -125,6 +125,7 @@ ja:
       number_transaction: トランザクション数
       status: 状態
       add_category: カテゴリを追加
+      sum_money_category: 合計額
     update:
       edit_success_message: カテゴリの成功
       edit_failure_message: アップデートに失敗しました
@@ -136,6 +137,9 @@ ja:
       total_end: トータルエンド
       total_gteq: "0"
       total_lteq: "1000"
+      search_name: 検索名のカテゴリ
+      name_suggest: My salary
+  create_at: 作成日時
   category: カテゴリ
   category_name: "カテゴリ名: %{name}"
   update_time: "%{update}前に更新"
@@ -244,3 +248,6 @@ ja:
   danger_delete: "本当にこれらのアカウントを削除しますか？このプロセスは元に戻せません。"
   cancel_account: "アカウントをキャンセルする"
   cancel: キャンセル
+  time:
+    formats:
+      covert: "%a, %d %b %Y %H:%M:%S"
