@@ -1,0 +1,21 @@
+<div id="myModal_delete<%= object.id %>" class="modal fade">
+  <div class="modal-dialog modal-confirm">
+    <div class="modal-content">
+      <div class="modal-header flex-column">
+        <div class="icon-box">
+          <i class="fa-solid fa-skull-crossbones"></i>
+        </div>
+        <h4 class="modal-title w-100"><%= t "sure_delete" %></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><%= t "danger_delete" %></p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t "cancel" %></button>
+        <p><%= button_to t("cancel_account"), user_registration_path, data: { confirm: t("sure_delete") },
+          method: :delete, class: "btn btn-danger" %></p>
+      </div>
+    </div>
+  </div>
+</div>
