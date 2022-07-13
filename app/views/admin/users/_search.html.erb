@@ -1,8 +1,8 @@
 <div class="align-center ">
-  <%= search_form_for [:admin, @search], class:"navbar-form flex flex-space-between ", remote: true do |f| %>
+  <%= search_form_for @search, url: url, class:"navbar-form flex flex-space-between ", remote: true do |f| %>
     <div class="flex align-end">
       <i class="fa-solid fa-filter s-16 m-r-5"></i>
-      <%= sort_link @search, :created_at, t(".created_at") %>
+      <%= sort_link @search, :confirmed_at, t(".confirmed_at") %>
     </div>
     <div class="input-group flex align-end">
       <div class="flex">

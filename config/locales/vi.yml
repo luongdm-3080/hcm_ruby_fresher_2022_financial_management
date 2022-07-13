@@ -198,9 +198,21 @@ vi:
   label_transaction: giao dịch
   admin:
     users:
+      index:
+        welcome: Tất cả người sử dụng
+        restores: Khôi phục
+        user: Người dùng
+      destroy:
+        destroy_success_message: Xóa tạm thời thành công
+        destroy_failure_message: Xóa tạm thời thất bại
+      restore:
+        restore_success_message: Khôi phục thành công
+        restore_failure_message: Khôi phục thất bại
+      really_destroy:
+        really_destroy_success: Xóa thành công
+        really_destroy_message: Xóa thất bại
       users:
         title: Người dùng
-        welcome: Tất cả người sử dụng
         name: Tên người dùng
         email: Email
         role: Role
@@ -211,9 +223,20 @@ vi:
         user: Tổng số người dùng
         create_at: "Ngày tạo"
       search:
-        created_at: Ngày tạo
+        confirmed_at: Ngày xác nhận
         search_name_and_email: Tìm theo tên hoặc email
         search_created_date: Tìm theo ngày
+      user:
+        sure_restore: Chắc muốn khôi phục người dùng?
+        destroy: Xóa tạm thời
+        restore: Khôi phục
+        sure_delete: "Bạn chắc muốn xóa người dùng?" 
+        really_destroy: Xóa người dùng
+        sure_really_destroy: "Bạn muốn xóa người dùng, không thể khôi phục được?"
+      restores: 
+        welcome: Khôi phục người dùng
+        admin_user: Tất cả người đang hoạt động
+        user: Người dùng
   show: Cho xem
   authorzie_warning: "Bạn không thể truy cập"
   current_password: Mật khẩu hiện tại

@@ -43,6 +43,8 @@ gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 gem "cancancan"
 gem "ransack"
+
+gem "paranoia", "~> 2.2"
 # Use Active Storage variant
 # gem "image_processing", "~> 1.2"
 

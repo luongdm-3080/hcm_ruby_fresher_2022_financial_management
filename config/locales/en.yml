@@ -183,10 +183,22 @@ en:
   label_transaction: transaction
   admin:
     users:
+      index:
+        welcome: All Users
+        restores: Restores
+        user: Users
+      destroy:
+        destroy_success_message: Destroy success
+        destroy_failure_message: Destroy failed
+      restore:
+        restore_success_message: Restore success
+        restore_failure_message: Restore failed
+      really_destroy:
+        really_destroy_success: Really destroy success
+        really_destroy_message: Really destroy failed
       users:
         index:
           title: Users
-          welcome: All Users
           name: Name user
           email: Email
           role: Role
@@ -197,9 +209,20 @@ en:
           user: Total user
           unauthorization: "You don't have permission to do this action"
       search:
-        created_at: Create at
+        confirmed_at: Confirmed at
         search_name_and_email: Search name or email
         search_created_date: Search created time
+      user:
+        sure_restore: You sure restore?
+        destroy: Destroy
+        restore: Restore
+        sure_delete: "You sure delete?" 
+        really_destroy: Really destroy
+        sure_really_destroy: "You sure really destroy?"
+      restores: 
+        welcome: Restore users
+        admin_user: Admin Users
+        user: Users
   show: Show
   success_wallet: "Create wallet success"
   danger_wallet: "Create wallet fail"
@@ -215,3 +238,4 @@ en:
   danger_delete: "Do you really want to delete these account? This process cannot be undone."
   cancel_account: "Cancel my account"
   cancel: Cancel
+  not_found_user: User not found
