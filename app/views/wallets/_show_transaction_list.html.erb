@@ -28,9 +28,9 @@
   <div class="flex-text offset-xs2">
     <div class="amount-detail ">
       <% if transaction.category_type == "income" %>
-        <span class="income">+€ <%= transaction.total %></span>
+        <span class="income">+ <%= number_to_currency(transaction.total, :locale => :en) %></span>
       <% else %>
-        <span class="expense">-€ <%= transaction.total %></span>
+        <span class="expense">- <%= number_to_currency(transaction.total, :locale => :en) %></span>
       <% end %>
     </div>
   </div>

@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   Pagy::DEFAULT[:items] = Settings.default_page
 
   def index
-    @search = current_user.categories.order_by_name.ransack(params[:search])
+    @search = load_categories.ransack(params[:search])
     @pagy, @categories = pagy @search.result
     respond_to do |format|
       format.html
@@ -26,27 +26,41 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    if @category.update category_params
+    ActiveRecord::Base.transaction do
+      if @category.transactions.present?
+        update_wallet
+      else
+        @category.update! category_params
+      end
       respond_to do |format|
         format.js{flash.now[:success] = t ".edit_success_message"}
       end
-    else
-      respond_to do |format|
-        format.js{flash.now[:danger] = t ".edit_failure_message"}
-      end
+    end
+  rescue StandardError
+    respond_to do |format|
+      format.js{flash.now[:danger] = t ".edit_failure_message"}
     end
   end
 
   def destroy
-    if @category.destroy
+    ActiveRecord::Base.transaction do
+      update_wallet_category_old if @category.transactions.present?
+      @category.destroy!
       flash[:success] = t ".success_message"
-    else
-      flash[:danger] = t ".failure_message"
+      redirect_back_or categories_path
     end
+  rescue StandardError
+    flash[:danger] = t ".failure_message"
     redirect_back_or categories_path
   end
 
   private
+
+  def update_wallet
+    update_wallet_category_old
+    @category.update! category_params
+    update_wallet_category_new
+  end
 
   def category_params
     params.require(:category).permit(Category::CATEGORY_CREATE_ATTRS)
@@ -58,5 +72,35 @@ class CategoriesController < ApplicationController
 
     flash[:danger] = t ".not_found"
     redirect_to categories_path
+  end
+
+  def update_wallet_category_old
+    if @category.income?
+      update_balance_subtract
+    else
+      update_balance_add
+    end
+  end
+
+  def update_wallet_category_new
+    if @category.income?
+      update_balance_add
+    else
+      update_balance_subtract
+    end
+  end
+
+  def update_balance_add
+    current_user.wallets.each do |wallet|
+      total = @category.transactions.by_transaction(wallet.id).sum(:total)
+      wallet.update! balance: wallet.balance + total
+    end
+  end
+
+  def update_balance_subtract
+    current_user.wallets.each do |wallet|
+      total = @category.transactions.by_transaction(wallet.id).sum(:total)
+      wallet.update! balance: wallet.balance - total
+    end
   end
 end

@@ -40,10 +40,6 @@ RSpec.describe CategoriesController, type: :controller do
           expect(response).to have_http_status "200"
         end
 
-        it "load categories users" do
-          expect(assigns(:categories).pluck(:id)).to eq(@ids)
-        end
-
         it "gets wallet by params scope" do
           expect(assigns(:categories).order_by_name.pluck(:id)).to eq(@ids)
         end
@@ -125,6 +121,15 @@ RSpec.describe CategoriesController, type: :controller do
       it "update failed" do
         patch :update, params: { id: category_1.id, category: { name: nil , category_type: "income" } }, xhr: true
         expect(flash.now[:danger]).to eq "Update Failure"
+      end
+
+      it "update success no transaction" do
+        patch :update, params: { id: category_3.id, category: { name: "test2" , category_type: "expense" } }, xhr: true
+        expect(flash.now[:success]).to eq "Update success"
+      end
+      it "update success expense" do
+        patch :update, params: { id: category_1.id, category: { name: "test1", category_type: "expense" } }, xhr: true
+        expect(flash.now[:success]).to eq "Update success"
       end
 
       context "when find not found" do

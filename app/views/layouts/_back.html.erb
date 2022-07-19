@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <div class="back">
+    <%= link_to :back do %>
+      <span class="icon-back">
+        <i class="fa-solid fa-angles-left"></i>
+        <%= t ".back" %>
+      </span>
+    <% end %>
+  </div>
+<% end %>

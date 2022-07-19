@@ -18,4 +18,7 @@ class Transaction < ApplicationRecord
   end)
   scope :latest, ->{order(transaction_date: :desc).limit Settings.latest}
   scope :category_transaction, ->{Transaction.joins(:category)}
+  scope :by_transaction, (lambda do |ids|
+    where(wallet_id: ids)
+  end)
 end

@@ -1,30 +1,36 @@
-<div class="item", id="wallet<%= wallet.id %>" >
-  <i class="bi bi-wallet"></i>
-  <span class = "wallet_name"><%= t "wallet_name", name: wallet.name %></span>
-
-  <i class="bi bi-piggy-bank"></i>
-  <span class = "wallet_balance">
-    <%= t "wallet_balance", balance:  number_to_currency(wallet.balance, :locale => :en) %>
-  </span>
-
-  <i class="bi bi-alarm-fill"></i>
-  <span class="timestamp">
-    <%= t "create_time", time: time_ago_in_words(wallet.created_at) %>
-  </span>
-  <span class = "btn_wallet">
-    <%= link_to t("transactions_wallet"), wallet_url(wallet) %>
-    <i class="fa fa-eye" aria-hidden="true"></i>
-    <span>||</span>
-
-    <button type="button" class="btn edit btn-info" data-toggle="modal" data-target="#myModal<%=wallet.id%>">
-      <%= t("edit") %>
-    </button>
-    <%= render "shared/modal_edit", object: wallet, render_ui: "wallets/form_wallet", header: t("header_edit") %>
-    <span>||</span>
-
-    <button type="button" class="btn cancel btn-link" data-toggle="modal" data-target="#myModal_delete<%=wallet.id%>">
-      <%= t("delete") %>
-    </button>
-    <%= render "shared/modal_delete", object: wallet, remote: true, header: t("header"), message: t("message")  %>
-  </span>
+<div class="item col-wrap", id="wallet<%= wallet.id %>" >
+  <div class="col">
+    <i class="bi bi-wallet"></i>
+    <span class = "wallet_name"><%= t "wallet_name", name: wallet.name %></span>
+  </div>
+  <div class="col">
+    <i class="bi bi-piggy-bank"></i>
+    <span class = "wallet_balance">
+      <%= t "wallet_balance", balance:  number_to_currency(wallet.balance, :locale => :en) %>
+    </span>
+  </div>
+  <div class="col">
+    <i class="bi bi-alarm-fill"></i>
+    <span class="timestamp">
+      <%= t "create_time", time: time_ago_in_words(wallet.created_at) %>
+    </span>
+  </div>
+  <div class="col">
+    <span class = "btn_wallet">
+      <button type="button" class="btn btn-light" >
+        <%= link_to t("transactions_wallet"), wallet_url(wallet) %>
+        <i class="fa fa-eye" aria-hidden="true"></i>
+      </button>
+      <span>||</span>
+      <button type="button" class="btn edit btn-info" data-toggle="modal" data-target="#myModal<%=wallet.id%>">
+        <%= t("edit") %>
+      </button>
+      <%= render "shared/modal_edit", object: wallet, render_ui: "wallets/form_wallet", header: t("header_edit") %>
+      <span>||</span>
+      <button type="button" class="btn cancel btn-danger" data-toggle="modal" data-target="#myModal_delete<%=wallet.id%>">
+        <%= t("delete") %>
+      </button>
+      <%= render "shared/modal_delete", object: wallet, remote: true, header: t("header"), message: t("message")  %>
+    </span>
+  </div>
 </div>
