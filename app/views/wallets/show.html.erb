@@ -12,7 +12,7 @@
     <content class="transactions-wrapper">
       <h2>
         <%= t ".current" %>
-        <span class="total-balance"><%= @wallet.balance %></span>
+        <span class="total-balance"><%= number_to_currency(@wallet.balance, :locale => :en) %></span>
       </h2>
       <div class="transactions">
         <% if @transactions.any? %>

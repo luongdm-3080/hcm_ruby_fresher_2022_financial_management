@@ -12,6 +12,10 @@
     <%= render "shared/modal_create", object: @transaction, remote: true, render_form: "form_transaction", header: t(".header_create") %>
   </div>
 </div>
+<div class="date-group">
+  <span class="date-start"> <%= l @start_day.to_time, format: :covert %></span>
+  <span class="date-end"> <%= l @end_day.to_time, format: :covert %></span>
+</div>
 <select onchange="window.location=this.value" class="form-control form-select">
   <option><%= @wallet.name %></option>
   <% load_wallets.each do |w| %>

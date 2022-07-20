@@ -360,10 +360,12 @@ div.transaction-div-4 {
   overflow: hidden;
 }
 .form-select {
-  width: 30%;
+  width: 20%;
   text-align: center;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
+  font-weight: bold;
+  font-size: 16.5px;
 }
 a:hover{
  text-decoration: none;
@@ -609,5 +611,27 @@ button.button-500 div {
   }
 }
 hr {
-  border-top: 1px solid red;
+  border-top: 1px solid $red;
+}
+.date-group {
+  text-align: center;
+  margin: 20px;
+}
+.date-start {
+  margin-right: 20px;
+}
+.input-category {
+  font-weight: bolder;
+  border: 1px solid $blue-light;
+}
+select#transaction_category_id {
+  display: inline;
+}
+select#transaction_wallet_id {
+  display: inline;
+}
+.chart-date {
+  margin-left: 180px;
+  font-weight: bolder;
+  font-size: 18px;
 }

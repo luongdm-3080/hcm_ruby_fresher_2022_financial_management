@@ -126,6 +126,7 @@ vi:
       number_transaction: Số giao dịch
       status: Trạng thái
       add_category: Tạo Category
+      sum_money_category: Tổng số tiền
     update:
       edit_success_message: Cập nhật thành công
       edit_failure_message: Cập nhật thất bại
@@ -137,6 +138,9 @@ vi:
       total_end: Tổng lớn
       total_gteq: "0"
       total_lteq: "1000"
+      search_name: Tìm kiếm tên categories
+      name_suggest: Tiền lương
+  create_at: Ngày tạo
   category: Category
   category_name: "Tên category là : %{name}"
   update_time: "Cập nhât %{update} trước"
@@ -245,3 +249,6 @@ vi:
   danger_delete: "Bạn có thực sự muốn xóa những tài khoản này không? Không thể hoàn tác quá trình này."
   cancel_account: "Hủy tài khoản của tôi"
   cancel: Hủy bỏ
+  time:
+    formats:
+      covert: "%a, %d %b %Y %H:%M:%S"

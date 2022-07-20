@@ -189,6 +189,7 @@ en:
         welcome: All Users
         restores: Restores
         user: Users
+        title: Admin user
       destroy:
         destroy_success_message: Destroy success
         destroy_failure_message: Destroy failed
@@ -241,3 +242,6 @@ en:
   cancel_account: "Cancel my account"
   cancel: Cancel
   not_found_user: User not found
+  time:
+    formats:
+      covert: "%a, %d %b %Y %H:%M:%S"

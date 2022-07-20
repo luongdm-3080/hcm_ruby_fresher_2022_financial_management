@@ -5,7 +5,8 @@
 
   <%= f.label :name, t("category_type")%>
   <div class="form-control_type">
-    <%= f.select :category_type, options_for_select(load_categories.category_types.keys.map {|k| [k.humanize, k]}) %>
+    <%= f.select :category_type, options_for_select(load_categories.category_types.keys.map {|k| [k.humanize, k]},
+     selected: object.category_type || nil) %>
   </div>
 
   <%= f.submit button_text, class: "btn btn-primary" %>

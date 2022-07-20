@@ -30,8 +30,10 @@ class TransactionsController < ApplicationController
     return unless update_transaction
 
     respond_to do |format|
-      format.js{flash.now[:success] = t ".edit_success_message"}
+      format.js{flash[:success] = t ".edit_success_message"}
     end
+    redirect_to wallet_transaction_path(wallet_id: @transaction.wallet_id,
+                                        id: @transaction.id)
   end
 
   def destroy
