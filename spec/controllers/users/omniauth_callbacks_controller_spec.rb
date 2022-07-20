@@ -18,7 +18,7 @@ RSpec.describe Users::OmniauthCallbacksController, type: :controller do
         expect(flash[:notice]).to eq "Successfully authenticated from Google account."
       end
 
-      it "redirect to category" do
+      it "redirect to root" do
         expect(response).to redirect_to root_path
       end
 

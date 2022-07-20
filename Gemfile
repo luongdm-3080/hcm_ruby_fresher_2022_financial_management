@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
-ruby "2.7.2"
+ruby "2.7.6"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 6.0.5"
@@ -52,11 +52,12 @@ gem "paranoia", "~> 2.2"
 gem "bootsnap", ">= 1.4.2", require: false
 
 gem "bullet"
-
+gem 'rswag'
 group :development, :test do
   gem "dotenv-rails"
   gem "pry", "~> 0.14.0"
   gem "factory_bot_rails"
+  gem 'rswag-specs'
   gem "faker", "2.1.2"
   gem "database_cleaner", "~> 1.5"
   gem "shoulda-matchers", "~> 5.0"

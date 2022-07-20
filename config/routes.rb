@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   devise_for :users, skip: %i(registrations sessions confirmations passwords), controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   scope "(:locale)", locale: /en|ja|vi/ do
     devise_for :users, skip: :omniauth_callbacks

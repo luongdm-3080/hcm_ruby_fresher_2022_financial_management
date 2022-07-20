@@ -35,7 +35,7 @@
                 <span class="small"><%= t ".category_total" %></span>
               </div>
               <div class="rightbox">
-                <span class="large"><%= object.sum_balance %></span>
+                <span class="large"><%= number_to_currency(object.sum_balance, :locale => :en)%></span>
                 <span class="small"><%= t ".balance_total" %></span>
               </div>
             </div>

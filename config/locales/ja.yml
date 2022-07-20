@@ -93,7 +93,7 @@ ja:
       current: "経常収支"
       my_wallet: "私の財布"
       wallet_name: "ウォレット名：%{name}"
-      wallet_balance: "バランク: $%{balance}"
+      wallet_balance: "バランク: %{balance}"
       create_time: "%{time} 前に作成"
       no_transaction : "取引なし"
     update:
@@ -102,8 +102,8 @@ ja:
     destroy:
       deleted_message: "ウォレットが削除されました"
   create_time: "%{time} 前に作成"
-  wallet_name: "ウォレット名：%{name} ||"
-  wallet_balance: "バランク: $%{balance} ||"
+  wallet_name: "ウォレット名：%{name} "
+  wallet_balance: "バランク: %{balance} "
   header: "ウォレットを削除する"
   message: "確かに財布ができます?????"
   header_edit: "ウォレットの編集"

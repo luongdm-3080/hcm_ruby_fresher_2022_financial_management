@@ -94,7 +94,7 @@ vi:
       current: "Số dư hiện tại"
       my_wallet: "Ví của tôi"
       wallet_name: "Tên ví là: %{name}"
-      wallet_balance: "Số tiền là: $%{balance}"
+      wallet_balance: "Số tiền là: %{balance}"
       create_time: "Tạo %{time} trước"
       no_transaction : "Hiện tại không có giao dịch nào"
     update:
@@ -103,8 +103,8 @@ vi:
     destroy:
       deleted_message: "Xóa ví thành công"
   create_time: "Đã tao %{time} trước kia"
-  wallet_name: "Tên ví là: %{name} ||"
-  wallet_balance: "Số tiền là: $%{balance} ||"
+  wallet_name: "Tên ví là: %{name} "
+  wallet_balance: "Số tiền là: %{balance} "
   header: "Xóa ví của bạn"
   message: "Bạn chắc là muốn xóa không????"
   header_edit: "Chính sửa ví"

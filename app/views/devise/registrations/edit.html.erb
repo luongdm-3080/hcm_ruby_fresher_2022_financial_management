@@ -10,7 +10,7 @@
 <% provide :button_text, t(".submit") %>
 <h1 class="welcome-h1"><%= t ".welcome" %></h1>
 
-<div class="row">
+<div class="devise row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user, url: user_registration_path, html: { method: :put }) do |f| %>
       <%= render "shared/error_messages", object: @user %>
